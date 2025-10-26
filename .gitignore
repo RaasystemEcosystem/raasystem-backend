@@ -1,0 +1,39 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local env & secrets
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build & coverage
+dist/
+build/
+coverage/
+
+# Logs
+logs/
+*.log
+
+# Docker (optional)
+*.tar
+docker-compose.override.yml
+
+# Editor configs
+.vscode/
+.idea/
+*.swp
+
+# Python cache (if RabexEngine)
+__pycache__/
+*.pyc
+
+# Archives
+*.zip
+*.tar.gz

@@ -1,0 +1,29 @@
+{
+  "name": "raasystem-backend",
+  "version": "1.0.0",
+  "description": "Backend for Raasystem",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "engines": {
+    "node": ">=18 <=22",
+    "npm": ">=8"
+  },
+  "dependencies": {
+    "@alpacahq/alpaca-trade-api": "^3.1.3",
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.14.0",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.1",
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
