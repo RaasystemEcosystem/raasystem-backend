@@ -6,11 +6,8 @@ const dotenv = require('dotenv');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./docs/swagger.json');
 
-// ✅ Load environment variables
-dotenv.config();
-
 // ✅ Routes
-const rbtRoutes = require('./routes/rbt');
+const rrwaRoutes = require('../server/routes/rrwaRoutes');
 const raaspayRoutes = require('./routes/raaspay');
 const oracleRoutes = require('./routes/oracle');
 
@@ -38,20 +35,23 @@ if (process.env.ICE_WS_URL) {
 // ✅ Services
 const ArbitrageService = require('../services/arbitrageService');
 
-// ----------------- Alpaca Adapter -----------------
-const alpaca = new AlpacaAdapter({
-  keyId: process.env.ALPACA_KEY || '<default-alpaca-key>',
-  secretKey: process.env.ALPACA_SECRET || '<default-alpaca-secret>',
-  paper: true,
-  baseUrl: process.env.APCA_API_BASE_URL || 'https://paper-api.alpaca.markets',
-  retryLimit: 3
-});
+// ✅ Load environment variables
+dotenv.config();
 
 // ✅ Express app
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
+
+// ----------------- Alpaca Adapter -----------------
+const alpaca = new AlpacaAdapter({
+  keyId: process.env.ALPACA_KEY,
+  secretKey: process.env.ALPACA_SECRET,
+  paper: true,
+  baseUrl: process.env.APCA_API_BASE_URL,
+  retryLimit: 3
+});
 
 // --------- Stock Endpoints ----------
 app.get('/api/stocks/price', (req, res) => {
@@ -103,25 +103,17 @@ app.get('/api/arbitrage/signals', (req, res) => {
   res.json(signals);
 });
 
-// ✅ Root & Health Check
+// ✅ Root & Swagger
 app.get('/', (req, res) => res.send('✅ Raasystem Backend API is running. Visit /api/docs for Swagger UI.'));
-app.get('/api/raaspay/health', (req, res) => res.json({ status: 'ok' }));
-
-// ----------------- Swagger -----------------
-app.get('/api/docs/swagger.json', (req, res) => res.json(swaggerDocument));
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(null, {
-  swaggerOptions: {
-    url: '/api/docs/swagger.json'
-  }
-}));
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // ✅ Other Routes
-app.use('/api/rbt', rbtRoutes);
+app.use('/api/rrwa', rrwaRoutes);
 app.use('/api/raaspay', raaspayRoutes);
 app.use('/api/oracle', oracleRoutes);
 
 // ✅ MongoDB Connection
-mongoose.connect(process.env.MONGO_URI || '<default-mongo-uri>', {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

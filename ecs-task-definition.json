@@ -1,0 +1,26 @@
+{
+  "family": "raasystem-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::724772066825:role/raasystem-ecs-execution-role",
+  "containerDefinitions": [
+    {
+      "name": "raasystem-container",
+      "image": "724772066825.dkr.ecr.us-east-2.amazonaws.com/raasystem-backend:latest",
+      "essential": true,
+      "portMappings": [
+        { "containerPort": 8000, "protocol": "tcp" }
+      ],
+      "environment": [
+        { "name": "MONGO_URI", "value": "<your-mongo-uri>" },
+        { "name": "ALPACA_KEY", "value": "<your-alpaca-key>" },
+        { "name": "ALPACA_SECRET", "value": "<your-alpaca-secret>" },
+        { "name": "APCA_API_BASE_URL", "value": "https://paper-api.alpaca.markets" },
+        { "name": "ICE_WS_URL", "value": "<optional-ice-ws-url>" },
+        { "name": "ICE_API_KEY", "value": "<optional-ice-api-key>" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+﻿{"memory":"1024","family":"raasystem-task","networkMode":"awsvpc","requiresCompatibilities":["FARGATE"],"containerDefinitions":[{"portMappings":[{"protocol":"tcp","containerPort":8000}],"name":"raasystem-container","essential":true,"image":"724772066825.dkr.ecr.us-east-2.amazonaws.com/raasystem-backend:latest"}],"cpu":"512"}
