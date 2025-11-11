@@ -1,0 +1,1 @@
+// Rabex Admin Panel component stub
