@@ -1,0 +1,26 @@
+{
+  "name": "raaswallet-ui",
+  "version": "1.0.0",
+  "description": "Raaswallet – Non-custodial crypto wallet for Raaskoin, Raastoken, and seamless payments in the Raasystem ecosystem.",
+  "author": "Raasystem Team",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "qrcode.react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "gh-pages": "^6.1.1",
+    "vite": "^6.3.5"
+  },
+  "homepage": "https://raasystemecosystem.github.io/raaswallet-ui"
+}

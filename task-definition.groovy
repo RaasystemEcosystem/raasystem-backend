@@ -1,0 +1,27 @@
+{
+  "family": "raasystem-backend-task",
+  "executionRoleArn": "arn:aws:iam::724772066825:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "containerDefinitions": [
+    {
+      "name": "raasystem-backend",
+      "image": "724772066825.dkr.ecr.us-west-2.amazonaws.com/raasystem-backend:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        { "name": "NODE_ENV", "value": "production" },
+        { "name": "MONGO_URI", "value": "<your-mongo-connection-string>" },
+        { "name": "ICE_WS_URL", "value": "<ICE-websocket-url>" },
+        { "name": "ICE_API_KEY", "value": "<ICE-api-key>" }
+      ]
+    }
+  ]
+}

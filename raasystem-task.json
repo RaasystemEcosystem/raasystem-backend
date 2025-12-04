@@ -1,0 +1,47 @@
+{
+  "family": "raasystem-task",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "arn:aws:iam::724772066825:role/raasystem-ecs-execution-role",
+  "containerDefinitions": [
+    {
+      "name": "raasystem-container",
+      "image": "724772066825.dkr.ecr.us-east-2.amazonaws.com/raasystem-backend:latest",
+      "cpu": 256,
+      "memory": 512,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "PORT",
+          "value": "8000"
+        },
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/raasystem-task",
+          "awslogs-region": "us-west-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "tags": [
+    {
+      "key": "Project",
+      "value": "Raasystem"
+    }
+  ]
+}

@@ -1,0 +1,997 @@
+2025/11/11 05:18:29.220562 [INFO] Starting...
+2025/11/11 05:18:29.220619 [INFO] Starting EBPlatform-PlatformEngine
+2025/11/11 05:18:29.220702 [INFO] reading event message file
+2025/11/11 05:18:29.221067 [INFO] Engine received EB command userdata-exec
+
+2025/11/11 05:18:29.227282 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:18:29.534637 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:18:29.886415 [INFO] This is a workflow controlled instance.
+2025/11/11 05:18:29.886519 [INFO] Engine command: (env-launch)
+
+2025/11/11 05:18:29.886819 [INFO] Executing instruction: SyncClock
+2025/11/11 05:18:29.886822 [INFO] Starting SyncClock
+2025/11/11 05:18:29.886831 [INFO] Running command: /usr/bin/chronyc tracking
+2025/11/11 05:18:29.890173 [INFO] Reference ID    : 00000000 ()
+Stratum         : 0
+Ref time (UTC)  : Thu Jan 01 00:00:00 1970
+System time     : 0.000000000 seconds fast of NTP time
+Last offset     : +0.000000000 seconds
+RMS offset      : 0.000000000 seconds
+Frequency       : 0.657 ppm fast
+Residual freq   : +0.000 ppm
+Skew            : 0.000 ppm
+Root delay      : 1.000000000 seconds
+Root dispersion : 1.000000000 seconds
+Update interval : 0.0 seconds
+Leap status     : Not synchronised
+
+2025/11/11 05:18:29.890191 [INFO] Running command: /usr/bin/chronyc -a makestep
+2025/11/11 05:18:29.892988 [INFO] 200 OK
+
+2025/11/11 05:18:29.893042 [INFO] Skipping Configure OS
+2025/11/11 05:18:29.893048 [INFO] Skipping LockRepo
+2025/11/11 05:18:29.893055 [INFO] Skipping GenerateEBBanner
+2025/11/11 05:18:29.893059 [INFO] Skipping Install Process Manager
+2025/11/11 05:18:29.893063 [INFO] Skipping install syslog
+2025/11/11 05:18:29.893067 [INFO] Skipping install cron
+2025/11/11 05:18:29.893071 [INFO] Skipping install proxy
+2025/11/11 05:18:29.893075 [INFO] Skipping installhealthd
+2025/11/11 05:18:29.893078 [INFO] Skipping Install Log Streaming Manager
+2025/11/11 05:18:29.893082 [INFO] Skipping install X-Ray
+2025/11/11 05:18:29.893086 [INFO] Skipping install Third Party License
+2025/11/11 05:18:29.893089 [INFO] Skipping install rpms
+2025/11/11 05:18:29.893094 [INFO] Instance has NOT been bootstrapped
+2025/11/11 05:18:29.893096 [INFO] Executing instruction: installSqsd
+2025/11/11 05:18:29.893099 [INFO] This is a web server environment instance, skip install sqsd daemon ...
+2025/11/11 05:18:29.893102 [INFO] Instance has NOT been bootstrapped
+2025/11/11 05:18:29.893104 [INFO] Executing instruction: bootstraphealthd
+2025/11/11 05:18:29.893106 [INFO] this is an enhanced health env ...
+2025/11/11 05:18:29.893118 [INFO] bootstrap healthd....
+2025/11/11 05:18:29.893128 [INFO] Running command: /usr/bin/id -u healthd || /usr/sbin/useradd --user-group healthd -s /sbin/nologin --create-home
+2025/11/11 05:18:30.104423 [INFO] /usr/bin/id: ‘healthd’: no such user
+
+2025/11/11 05:18:30.104740 [INFO] none proxy, skip creating proxy dir for healthd
+2025/11/11 05:18:30.104754 [INFO] bootstrap healthd....
+2025/11/11 05:18:30.104766 [INFO] Running command: /usr/bin/id -u healthd || /usr/sbin/useradd --user-group healthd -s /sbin/nologin --create-home
+2025/11/11 05:18:30.108154 [INFO] 1001
+
+2025/11/11 05:18:30.108480 [INFO] configure bundle log for healthd...
+2025/11/11 05:18:30.108552 [INFO] Skipping Install yum packages
+2025/11/11 05:18:30.108558 [INFO] Skipping install docker-compose
+2025/11/11 05:18:30.108567 [INFO] Skipping Configure Docker Daemon
+2025/11/11 05:18:30.108573 [INFO] Skipping MarkBaked
+2025/11/11 05:18:30.108583 [INFO] Instance has NOT been bootstrapped
+2025/11/11 05:18:30.108588 [INFO] Executing instruction: TuneSystemSettings
+2025/11/11 05:18:30.108590 [INFO] Starting TuneSystemSettings
+2025/11/11 05:18:30.108594 [INFO] Instance has NOT been bootstrapped
+2025/11/11 05:18:30.110608 [INFO] Executing instruction: GetSetupLogRotate
+2025/11/11 05:18:30.110624 [INFO] Initialize LogRotate files and directories
+2025/11/11 05:18:30.120065 [INFO] Instance has NOT been bootstrapped
+2025/11/11 05:18:30.120080 [INFO] Executing instruction: BootstrapCFNHup
+2025/11/11 05:18:30.120083 [INFO] Bootstrap cfn-hup
+2025/11/11 05:18:30.121303 [INFO] Copying file /opt/elasticbeanstalk/config/private/aws-eb-command-handler.conf to /etc/cfn/hooks.d/aws-eb-command-handler.conf
+2025/11/11 05:18:30.122466 [INFO] Executing instruction: StartCFNHup
+2025/11/11 05:18:30.122475 [INFO] Start cfn-hup
+2025/11/11 05:18:30.122490 [INFO] Running command: systemctl show -p PartOf cfn-hup.service
+2025/11/11 05:18:30.136549 [INFO] cfn-hup is not registered with EB yet, registering it now
+2025/11/11 05:18:30.136580 [INFO] Running command: systemctl show -p PartOf cfn-hup.service
+2025/11/11 05:18:30.152080 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:18:30.371306 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:18:30.381502 [INFO] Running command: systemctl is-enabled aws-eb.target
+2025/11/11 05:18:30.389801 [INFO] Running command: systemctl enable aws-eb.target
+2025/11/11 05:18:30.621734 [INFO] Running command: systemctl start aws-eb.target
+2025/11/11 05:18:30.631403 [INFO] Running command: systemctl enable cfn-hup.service
+2025/11/11 05:18:30.870532 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/cfn-hup.service → /etc/systemd/system/cfn-hup.service.
+
+2025/11/11 05:18:30.870572 [INFO] Running command: systemctl is-active cfn-hup.service
+2025/11/11 05:18:30.878979 [INFO] cfn-hup process is not running, starting it now
+2025/11/11 05:18:30.878998 [INFO] Running command: systemctl show -p PartOf cfn-hup.service
+2025/11/11 05:18:30.896956 [INFO] Running command: systemctl is-active cfn-hup.service
+2025/11/11 05:18:30.905585 [INFO] Running command: systemctl start cfn-hup.service
+2025/11/11 05:18:30.939221 [INFO] Instance has NOT been bootstrapped
+2025/11/11 05:18:30.939247 [INFO] Executing instruction: SetupPublishLogCronjob
+2025/11/11 05:18:30.939251 [INFO] Setup publish logs cron job...
+2025/11/11 05:18:30.939256 [INFO] Copying file /opt/elasticbeanstalk/config/private/logtasks/cron/publishlogs to /etc/cron.d/publishlogs
+2025/11/11 05:18:30.940969 [INFO] Executing instruction: Start Docker
+2025/11/11 05:18:30.940984 [INFO] Starting Docker...
+2025/11/11 05:18:30.941062 [INFO] Copying file /opt/elasticbeanstalk/config/private/docker-log.conf to /etc/systemd/system/docker.service.d/docker-log.conf
+2025/11/11 05:18:30.942140 [INFO] Copying file /opt/elasticbeanstalk/config/private/docker-rsyslog.conf to /etc/rsyslog.d/docker-log.conf
+2025/11/11 05:18:30.943243 [INFO] Running command: systemctl restart rsyslog.service
+2025/11/11 05:18:31.267584 [INFO] Running command: systemctl show -p PartOf docker.service
+2025/11/11 05:18:31.283434 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:18:31.520537 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:18:31.530708 [INFO] Running command: systemctl show -p PartOf docker.service
+2025/11/11 05:18:31.543531 [INFO] Running command: systemctl restart docker.service
+2025/11/11 05:18:37.069130 [INFO] Instance has NOT been bootstrapped
+2025/11/11 05:18:37.069145 [INFO] Executing instruction: Setup Docker Options
+2025/11/11 05:18:37.069148 [INFO] Setting up configurations for docker platform
+2025/11/11 05:18:37.076313 [INFO] Running command: systemctl show -p PartOf eb-docker-events.service
+2025/11/11 05:18:37.098570 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:18:37.362103 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:18:37.372728 [INFO] Running command: systemctl enable eb-docker-events.service
+2025/11/11 05:18:37.646138 [INFO] Created symlink /etc/systemd/system/docker.service.wants/eb-docker-events.service → /etc/systemd/system/eb-docker-events.service.
+
+2025/11/11 05:18:37.646173 [INFO] Running command: systemctl show -p PartOf eb-docker-events.service
+2025/11/11 05:18:37.659148 [INFO] Running command: systemctl is-active eb-docker-events.service
+2025/11/11 05:18:37.668066 [INFO] Running command: systemctl start eb-docker-events.service
+2025/11/11 05:18:37.732519 [INFO] Instance has NOT been bootstrapped
+2025/11/11 05:18:37.732538 [INFO] Executing instruction: MarkBootstrapped
+2025/11/11 05:18:37.732542 [INFO] Starting MarkBootstrapped
+2025/11/11 05:18:37.732548 [INFO] Instance has NOT been bootstrapped
+2025/11/11 05:18:37.732775 [INFO] Marked instance as Bootstrapped
+2025/11/11 05:18:37.732780 [INFO] Executing instruction: Save CFN Stack Info
+2025/11/11 05:18:37.732846 [INFO] Executing cleanup logic
+2025/11/11 05:18:37.732857 [INFO] Platform Engine finished execution on command: env-launch
+
+2025/11/11 05:20:35.252702 [INFO] Starting...
+2025/11/11 05:20:35.252750 [INFO] Starting EBPlatform-PlatformEngine
+2025/11/11 05:20:35.252777 [INFO] reading event message file
+2025/11/11 05:20:35.253163 [INFO] Engine received EB command cfn-hup-exec
+
+2025/11/11 05:20:35.329001 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:20:35.628939 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:20:35.911991 [INFO] checking whether command app-deploy is applicable to this instance...
+2025/11/11 05:20:35.912005 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/11/11 05:20:35.912009 [INFO] Engine command: (app-deploy)
+
+2025/11/11 05:20:35.912013 [INFO] Downloading EB Application...
+2025/11/11 05:20:35.912015 [INFO] Region: us-west-2
+2025/11/11 05:20:35.912017 [INFO] envID: e-5anwd3ztn7
+2025/11/11 05:20:35.912019 [INFO] envBucket: elasticbeanstalk-us-west-2-724772066825
+2025/11/11 05:20:35.912021 [INFO] accountID: 724772066825
+2025/11/11 05:20:35.912024 [INFO] Using manifest file name from command request
+2025/11/11 05:20:35.912030 [INFO] Unable to get version manifest file.
+2025/11/11 05:20:35.912033 [INFO] Downloading latest manifest available.
+2025/11/11 05:20:35.912036 [INFO] Download latest app version manifest
+2025/11/11 05:20:35.912362 [INFO] resources/environments/e-5anwd3ztn7/_runtime/versions/manifest
+2025/11/11 05:20:35.955726 [INFO] latestManifest key *: resources/environments/e-5anwd3ztn7/_runtime/versions/manifest_1762838260566
+
+2025/11/11 05:20:35.955956 [INFO] Downloading: bucket: elasticbeanstalk-us-west-2-724772066825, object: resources/environments/e-5anwd3ztn7/_runtime/versions/manifest_1762838260566, expected bucket owner: 724772066825
+2025/11/11 05:20:35.995875 [INFO] Download successful160bytes downloaded
+2025/11/11 05:20:35.995973 [INFO] Trying to read and parse version manifest...
+2025/11/11 05:20:35.996068 [INFO] Downloading: bucket: elasticbeanstalk-us-west-2-724772066825, object: resources/environments/e-5anwd3ztn7/_runtime/_versions/raasystem-backend/app-a3eb-251111_001727228363, expected bucket owner: 724772066825
+2025/11/11 05:20:36.710032 [INFO] Download successful5239384bytes downloaded
+2025/11/11 05:20:36.710403 [INFO] Executing instruction: ElectLeader
+2025/11/11 05:20:36.710412 [INFO] Running leader election for instance i-0f85d4776fcd00c0b...
+2025/11/11 05:20:36.710415 [INFO] Calling the cfn-elect-cmd-leader to elect the command leader.
+2025/11/11 05:20:36.710425 [INFO] Running command: /opt/aws/bin/cfn-elect-cmd-leader --stack arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b --command-name ElasticBeanstalkCommand-AWSEBAutoScalingGroup --invocation-id ec906b02-2691-495e-bfe2-d9644f60de17 --listener-id i-0f85d4776fcd00c0b --region us-west-2
+2025/11/11 05:20:37.027624 [INFO] Instance is Leader.
+2025/11/11 05:20:37.027666 [INFO] Executing instruction: stopSqsd
+2025/11/11 05:20:37.027671 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
+2025/11/11 05:20:37.027684 [INFO] Executing instruction: PreBuildEbExtension
+2025/11/11 05:20:37.027687 [INFO] Starting executing the config set Infra-EmbeddedPreBuild.
+2025/11/11 05:20:37.027699 [INFO] Running command: /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2 --configsets Infra-EmbeddedPreBuild
+2025/11/11 05:20:37.342932 [INFO] Finished executing the config set Infra-EmbeddedPreBuild.
+
+2025/11/11 05:20:37.342971 [INFO] Executing instruction: StagedockerApplication
+2025/11/11 05:20:37.342982 [INFO] Running command: docker ps -a -q -f status=running
+2025/11/11 05:20:37.359699 [INFO] Pruning containers ...
+2025/11/11 05:20:37.359724 [INFO] Running command: docker ps -a
+2025/11/11 05:20:37.373803 [INFO] CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+2025/11/11 05:20:37.373852 [INFO] Running command: docker container prune -f
+2025/11/11 05:20:37.389184 [INFO] Total reclaimed space: 0B
+
+2025/11/11 05:20:37.389203 [INFO] Running command: docker ps -a
+2025/11/11 05:20:37.403967 [INFO] CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+2025/11/11 05:20:37.403987 [INFO] Recreating /var/app/staging/
+2025/11/11 05:20:37.404076 [INFO] Recreating /var/log/eb-docker/containers/eb-current-app
+2025/11/11 05:20:37.404320 [INFO] Running command: /bin/file -m /opt/elasticbeanstalk/config/private/beanstalk-magic -b --mime-type /opt/elasticbeanstalk/deployment/app_source_bundle
+2025/11/11 05:20:37.411797 [INFO] application/zip
+
+2025/11/11 05:20:37.411815 [INFO] app source bundle is zip file ...
+2025/11/11 05:20:37.411821 [INFO] extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/
+2025/11/11 05:20:37.411830 [INFO] Running command: /usr/bin/unzip -q -o /opt/elasticbeanstalk/deployment/app_source_bundle -d /var/app/staging/
+2025/11/11 05:20:37.678662 [INFO] finished extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/ successfully
+2025/11/11 05:20:37.678681 [INFO] Executing instruction: RunAppDeployPreBuildHooks
+2025/11/11 05:20:37.678761 [INFO] Executing platform hooks in .platform/hooks/prebuild/
+2025/11/11 05:20:37.678780 [INFO] The dir .platform/hooks/prebuild/ does not exist
+2025/11/11 05:20:37.678783 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/prebuild
+2025/11/11 05:20:37.678788 [INFO] Executing instruction: Generate environment file
+2025/11/11 05:20:37.678858 [INFO] Executing instruction: Docker Specific Build Application
+2025/11/11 05:20:37.678862 [INFO] start build docker app
+2025/11/11 05:20:37.678864 [INFO] detected new app as docker compose app
+2025/11/11 05:20:37.678876 [INFO] Running command: docker compose config
+2025/11/11 05:20:41.828713 [INFO] Running command: docker compose config --services
+2025/11/11 05:20:41.921382 [INFO] backend
+
+2025/11/11 05:20:41.921410 [INFO] time="2025-11-11T05:20:41Z" level=warning msg="/var/app/staging/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+
+2025/11/11 05:20:41.921519 [INFO] fetching image names from Dockerfile /var/app/staging/Dockerfile
+2025/11/11 05:20:41.921601 [INFO] found images [node:18-alpine] in Dockerfile /var/app/staging/Dockerfile
+2025/11/11 05:20:41.921614 [INFO] Running command: docker compose pull --ignore-buildable
+2025/11/11 05:20:42.011379 [INFO] time="2025-11-11T05:20:42Z" level=warning msg="/var/app/staging/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ backend Skipped - No image to be pulled 
+
+2025/11/11 05:20:42.011434 [INFO] successfully execute command: docker compose pull --ignore-buildable
+2025/11/11 05:20:42.011447 [INFO] Running command: docker compose build
+2025/11/11 05:21:10.334228 [INFO] time="2025-11-11T05:20:42Z" level=warning msg="/var/app/staging/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ staging-backend  Built
+
+2025/11/11 05:21:10.335767 [INFO] successfully execute command: docker compose build
+2025/11/11 05:21:10.335782 [INFO] successfully build docker images
+2025/11/11 05:21:10.336909 [INFO] Executing instruction: configure X-Ray
+2025/11/11 05:21:10.337721 [INFO] X-Ray is not enabled.
+2025/11/11 05:21:10.337734 [INFO] Executing instruction: configure proxy Nginx
+2025/11/11 05:21:10.338602 [INFO] Recreating /var/proxy/staging/nginx
+2025/11/11 05:21:10.355352 [INFO] Executing instruction: configure healthd specific proxy conf
+2025/11/11 05:21:10.358930 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:21:10.390056 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:21:10.684727 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:21:10.727207 [INFO] Running command: systemctl is-enabled aws-eb.target
+2025/11/11 05:21:10.741785 [INFO] Running command: systemctl enable aws-eb.target
+2025/11/11 05:21:11.028946 [INFO] Running command: systemctl start aws-eb.target
+2025/11/11 05:21:11.065897 [INFO] Running command: systemctl enable healthd.service
+2025/11/11 05:21:11.326544 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/healthd.service → /etc/systemd/system/healthd.service.
+
+2025/11/11 05:21:11.326584 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:21:11.346889 [INFO] Running command: systemctl is-active healthd.service
+2025/11/11 05:21:11.356523 [INFO] Running command: systemctl start healthd.service
+2025/11/11 05:21:11.429892 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
+2025/11/11 05:21:11.432537 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
+2025/11/11 05:21:11.433717 [INFO] Executing instruction: configure log streaming
+2025/11/11 05:21:11.433737 [INFO] log streaming is not enabled
+2025/11/11 05:21:11.433741 [INFO] disable log stream
+2025/11/11 05:21:11.433750 [INFO] Running command: systemctl show -p PartOf amazon-cloudwatch-agent.service
+2025/11/11 05:21:11.454100 [INFO] Running command: systemctl stop amazon-cloudwatch-agent.service
+2025/11/11 05:21:11.469456 [INFO] Executing instruction: GetToggleForceRotate
+2025/11/11 05:21:11.469477 [INFO] Checking if logs need forced rotation
+2025/11/11 05:21:11.469497 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:21:12.063676 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:21:12.446922 [INFO] Generating rsyslog config from Procfile
+2025/11/11 05:21:12.450881 [INFO] Running command: systemctl restart rsyslog.service
+2025/11/11 05:21:12.951046 [INFO] Executing instruction: Configure Docker Logging
+2025/11/11 05:21:12.977748 [INFO] Executing instruction: PostBuildEbExtension
+2025/11/11 05:21:12.977774 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
+2025/11/11 05:21:12.977792 [INFO] Running command: /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2 --configsets Infra-EmbeddedPostBuild
+2025/11/11 05:21:13.356828 [INFO] Finished executing the config set Infra-EmbeddedPostBuild.
+
+2025/11/11 05:21:13.356962 [INFO] Executing instruction: CleanEbExtensions
+2025/11/11 05:21:13.356995 [INFO] Cleaned ebextensions subdirectories from app staging directory.
+2025/11/11 05:21:13.357000 [INFO] Executing instruction: RunAppDeployPreDeployHooks
+2025/11/11 05:21:13.357517 [INFO] Executing platform hooks in .platform/hooks/predeploy/
+2025/11/11 05:21:13.357559 [INFO] The dir .platform/hooks/predeploy/ does not exist
+2025/11/11 05:21:13.357572 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/predeploy
+2025/11/11 05:21:13.357582 [INFO] Executing instruction: stop X-Ray
+2025/11/11 05:21:13.357585 [INFO] stop X-Ray ...
+2025/11/11 05:21:13.357599 [INFO] Running command: systemctl show -p PartOf xray.service
+2025/11/11 05:21:13.372089 [WARN] stopProcess Warning: process xray is not registered 
+2025/11/11 05:21:13.372130 [INFO] Running command: systemctl stop xray.service
+2025/11/11 05:21:13.387186 [INFO] Executing instruction: Run Docker Container
+2025/11/11 05:21:13.387223 [INFO] this is the first time deploying app...
+2025/11/11 05:21:13.387230 [INFO] Removing /var/app/current/ if it exists
+2025/11/11 05:21:13.387240 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2025/11/11 05:21:13.387270 [INFO] detected new app is docker compose app
+2025/11/11 05:21:13.387283 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:21:13.405695 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:21:13.668202 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:21:13.677062 [INFO] Running command: systemctl enable eb-docker-compose-events.service
+2025/11/11 05:21:13.964584 [INFO] Created symlink /etc/systemd/system/docker.service.wants/eb-docker-compose-events.service → /etc/systemd/system/eb-docker-compose-events.service.
+
+2025/11/11 05:21:13.964628 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:21:13.980004 [INFO] Running command: systemctl is-active eb-docker-compose-events.service
+2025/11/11 05:21:13.992565 [INFO] Running command: systemctl start eb-docker-compose-events.service
+2025/11/11 05:21:14.096708 [INFO] Running command: docker images | sed 1d
+2025/11/11 05:21:14.159092 [INFO] staging-backend   latest    c632962f5eea   8 seconds ago   223MB
+
+2025/11/11 05:21:14.159126 [INFO] tag image with command docker tag c632962f5eea current-backend:latest
+2025/11/11 05:21:14.159135 [INFO] Running command: docker tag c632962f5eea current-backend:latest
+2025/11/11 05:21:14.185151 [INFO] Running command: docker rmi staging-backend
+2025/11/11 05:21:14.205845 [INFO] Untagged: staging-backend:latest
+
+2025/11/11 05:21:14.205869 [INFO] Running command: docker compose up -d
+2025/11/11 05:21:15.683745 [INFO] time="2025-11-11T05:21:14Z" level=warning msg="/var/app/current/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Network current_default  Creating
+ Network current_default  Created
+ Container raasystem-backend  Creating
+ Container raasystem-backend  Created
+ Container raasystem-backend  Starting
+ Container raasystem-backend  Started
+
+2025/11/11 05:21:15.726129 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:21:15.764918 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:21:16.045966 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:21:16.059407 [INFO] Running command: systemctl enable eb-docker-compose-log.service
+2025/11/11 05:21:16.367152 [INFO] The unit files have no installation config (WantedBy=, RequiredBy=, Also=,
+Alias= settings in the [Install] section, and DefaultInstance= for template
+units). This means they are not meant to be enabled using systemctl.
+ 
+Possible reasons for having this kind of units are:
+• A unit may be statically enabled by being symlinked from another unit's
+  .wants/ or .requires/ directory.
+• A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+• A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+• In case of template units, the unit is meant to be enabled with some
+  instance name specified.
+
+2025/11/11 05:21:16.367184 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:21:16.382716 [INFO] Running command: systemctl is-active eb-docker-compose-log.service
+2025/11/11 05:21:16.390952 [INFO] Running command: systemctl start eb-docker-compose-log.service
+2025/11/11 05:21:16.461673 [INFO] Running command: docker compose ps -q
+2025/11/11 05:21:16.925463 [INFO] b2085c1a8936b4e42d9fb5a8e5574e3026478e3117c34a620c96906f59707036
+
+2025/11/11 05:21:16.925504 [INFO] time="2025-11-11T05:21:16Z" level=warning msg="/var/app/current/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+
+2025/11/11 05:21:16.925615 [INFO] Cleanup images ...
+2025/11/11 05:21:16.925625 [INFO] Running command: docker images -a
+2025/11/11 05:21:16.958777 [INFO] REPOSITORY        TAG       IMAGE ID       CREATED          SIZE
+current-backend   latest    c632962f5eea   10 seconds ago   223MB
+
+2025/11/11 05:21:16.958809 [INFO] Running command: docker rmi `docker images -aq`
+2025/11/11 05:21:17.005204 [INFO] Error response from daemon: conflict: unable to delete c632962f5eea (cannot be forced) - image is being used by running container b2085c1a8936
+
+2025/11/11 05:21:17.005231 [INFO] Running command: docker images -a
+2025/11/11 05:21:17.030838 [INFO] REPOSITORY        TAG       IMAGE ID       CREATED          SIZE
+current-backend   latest    c632962f5eea   11 seconds ago   223MB
+
+2025/11/11 05:21:17.030866 [INFO] Pruning build cache ...
+2025/11/11 05:21:17.030877 [INFO] Running command: docker builder prune -f
+2025/11/11 05:21:17.717405 [INFO] ID						RECLAIMABLE	SIZE		LAST ACCESSED
+kgakrk2spwf43c0r5xferjcfi*              	true 		428B      	7 seconds ago
+w0b0d9mgp7wzlfshqkow5ss23*              	true 	18.01MB   	7 seconds ago
+rdrxg6t3borovmq8wc8tyc7k5*              	true 	95B       	7 seconds ago
+Total:	18.01MB
+
+2025/11/11 05:21:17.717638 [INFO] Executing instruction: start X-Ray
+2025/11/11 05:21:17.717648 [INFO] X-Ray is not enabled.
+2025/11/11 05:21:17.717652 [INFO] Executing instruction: configureSqsd
+2025/11/11 05:21:17.717656 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2025/11/11 05:21:17.717658 [INFO] Executing instruction: startSqsd
+2025/11/11 05:21:17.717661 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2025/11/11 05:21:17.717663 [INFO] Executing instruction: Track pids in healthd
+2025/11/11 05:21:17.717667 [INFO] This is an enhanced health env...
+2025/11/11 05:21:17.717683 [INFO] Running command: systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2025/11/11 05:21:17.733370 [INFO] eb-docker-compose-log.service healthd.service eb-docker-events.service cfn-hup.service docker.service eb-docker-compose-events.service
+
+2025/11/11 05:21:17.733401 [INFO] Running command: systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2025/11/11 05:21:17.742196 [INFO] 
+
+2025/11/11 05:21:17.746050 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2025/11/11 05:21:17.746134 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2025/11/11 05:21:17.746151 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2025/11/11 05:21:17.746154 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2025/11/11 05:21:17.746160 [INFO] Executing cleanup logic
+2025/11/11 05:21:17.756620 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1762838477746,"severity":"INFO"}]}]}
+
+2025/11/11 05:21:17.757616 [INFO] Platform Engine finished execution on command: app-deploy
+
+2025/11/11 05:25:49.453771 [INFO] Starting...
+2025/11/11 05:25:49.453821 [INFO] Starting EBPlatform-PlatformEngine
+2025/11/11 05:25:49.453847 [INFO] reading event message file
+2025/11/11 05:25:49.462376 [INFO] Engine received EB command cfn-hup-exec
+
+2025/11/11 05:25:49.594929 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:25:50.030651 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:25:50.342632 [INFO] checking whether command tail-log is applicable to this instance...
+2025/11/11 05:25:50.342645 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/11/11 05:25:50.342647 [INFO] Engine command: (tail-log)
+
+2025/11/11 05:25:50.343739 [INFO] Executing instruction: GetTailLogs
+2025/11/11 05:25:50.343745 [INFO] Tail Logs...
+2025/11/11 05:25:50.349934 [INFO] Running command: tail -n 100 /var/log/eb-docker/containers/eb-current-app/eb-stdouterr.log
+2025/11/11 05:25:50.352048 [INFO] Running command: tail -n 100 /var/log/docker-events.log
+2025/11/11 05:25:50.354013 [INFO] Running command: tail -n 100 /var/log/docker-compose-events.log
+2025/11/11 05:25:50.355737 [INFO] Running command: tail -n 100 /var/log/docker
+2025/11/11 05:25:50.357524 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+2025/11/11 05:25:50.359776 [INFO] Running command: tail -n 100 /var/log/eb-hooks.log
+2025/11/11 05:25:50.423465 [INFO] Executing cleanup logic
+2025/11/11 05:25:50.423540 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1762838750423,"severity":"INFO"}]}]}
+
+2025/11/11 05:25:50.423559 [INFO] Platform Engine finished execution on command: tail-log
+
+2025/11/11 05:37:24.584094 [INFO] Starting...
+2025/11/11 05:37:24.584142 [INFO] Starting EBPlatform-PlatformEngine
+2025/11/11 05:37:24.584312 [INFO] reading event message file
+2025/11/11 05:37:24.584699 [INFO] Engine received EB command cfn-hup-exec
+
+2025/11/11 05:37:24.658235 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:37:24.955524 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:37:25.237016 [INFO] checking whether command app-deploy is applicable to this instance...
+2025/11/11 05:37:25.237035 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/11/11 05:37:25.237039 [INFO] Engine command: (app-deploy)
+
+2025/11/11 05:37:25.237042 [INFO] Downloading EB Application...
+2025/11/11 05:37:25.237044 [INFO] Region: us-west-2
+2025/11/11 05:37:25.237046 [INFO] envID: e-5anwd3ztn7
+2025/11/11 05:37:25.237049 [INFO] envBucket: elasticbeanstalk-us-west-2-724772066825
+2025/11/11 05:37:25.237050 [INFO] accountID: 724772066825
+2025/11/11 05:37:25.237053 [INFO] Using manifest file name from command request
+2025/11/11 05:37:25.237058 [INFO] Manifest name is : manifest_1762839442261
+2025/11/11 05:37:25.237060 [INFO] Download app version manifest
+2025/11/11 05:37:25.237249 [INFO] Downloading: bucket: elasticbeanstalk-us-west-2-724772066825, object: resources/environments/e-5anwd3ztn7/_runtime/versions/manifest_1762839442261, expected bucket owner: 724772066825
+2025/11/11 05:37:25.306290 [INFO] Download successful114bytes downloaded
+2025/11/11 05:37:25.306428 [INFO] Trying to read and parse version manifest...
+2025/11/11 05:37:25.306602 [INFO] Downloading: bucket: elasticbeanstalk-us-west-2-724772066825, object: resources/environments/e-5anwd3ztn7/_runtime/_versions/raasystem-backend/app-28f9-251111_003713944036, expected bucket owner: 724772066825
+2025/11/11 05:37:25.556431 [INFO] Download successful5239336bytes downloaded
+2025/11/11 05:37:25.563586 [INFO] Executing instruction: ElectLeader
+2025/11/11 05:37:25.563598 [INFO] Running leader election for instance i-0f85d4776fcd00c0b...
+2025/11/11 05:37:25.563601 [INFO] Calling the cfn-elect-cmd-leader to elect the command leader.
+2025/11/11 05:37:25.563619 [INFO] Running command: /opt/aws/bin/cfn-elect-cmd-leader --stack arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b --command-name ElasticBeanstalkCommand-AWSEBAutoScalingGroup --invocation-id 574d45bc-9338-4fd7-bfe3-a7e7b984287a --listener-id i-0f85d4776fcd00c0b --region us-west-2
+2025/11/11 05:37:25.879796 [INFO] Instance is Leader.
+2025/11/11 05:37:25.879843 [INFO] Executing instruction: stopSqsd
+2025/11/11 05:37:25.879849 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
+2025/11/11 05:37:25.879853 [INFO] Executing instruction: PreBuildEbExtension
+2025/11/11 05:37:25.879857 [INFO] Starting executing the config set Infra-EmbeddedPreBuild.
+2025/11/11 05:37:25.879872 [INFO] Running command: /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2 --configsets Infra-EmbeddedPreBuild
+2025/11/11 05:37:26.213448 [INFO] Finished executing the config set Infra-EmbeddedPreBuild.
+
+2025/11/11 05:37:26.213502 [INFO] Executing instruction: StagedockerApplication
+2025/11/11 05:37:26.213511 [INFO] Running command: docker ps -a -q -f status=running
+2025/11/11 05:37:26.232513 [INFO] Pruning containers ...
+2025/11/11 05:37:26.232555 [INFO] Running command: docker ps -a
+2025/11/11 05:37:26.247716 [INFO] CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS                          PORTS     NAMES
+b2085c1a8936   current-backend   "docker-entrypoint.s…"   16 minutes ago   Restarting (1) 15 seconds ago             raasystem-backend
+
+2025/11/11 05:37:26.247744 [INFO] Running command: docker container prune -f
+2025/11/11 05:37:26.262121 [INFO] Total reclaimed space: 0B
+
+2025/11/11 05:37:26.262146 [INFO] Running command: docker ps -a
+2025/11/11 05:37:26.279519 [INFO] CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS                          PORTS     NAMES
+b2085c1a8936   current-backend   "docker-entrypoint.s…"   16 minutes ago   Restarting (1) 15 seconds ago             raasystem-backend
+
+2025/11/11 05:37:26.279543 [INFO] Recreating /var/app/staging/
+2025/11/11 05:37:26.279625 [INFO] Recreating /var/log/eb-docker/containers/eb-current-app
+2025/11/11 05:37:26.279882 [INFO] Running command: /bin/file -m /opt/elasticbeanstalk/config/private/beanstalk-magic -b --mime-type /opt/elasticbeanstalk/deployment/app_source_bundle
+2025/11/11 05:37:26.288905 [INFO] application/zip
+
+2025/11/11 05:37:26.288925 [INFO] app source bundle is zip file ...
+2025/11/11 05:37:26.288931 [INFO] extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/
+2025/11/11 05:37:26.288942 [INFO] Running command: /usr/bin/unzip -q -o /opt/elasticbeanstalk/deployment/app_source_bundle -d /var/app/staging/
+2025/11/11 05:37:26.559897 [INFO] finished extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/ successfully
+2025/11/11 05:37:26.559917 [INFO] Executing instruction: RunAppDeployPreBuildHooks
+2025/11/11 05:37:26.559945 [INFO] Executing platform hooks in .platform/hooks/prebuild/
+2025/11/11 05:37:26.559964 [INFO] The dir .platform/hooks/prebuild/ does not exist
+2025/11/11 05:37:26.559967 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/prebuild
+2025/11/11 05:37:26.559973 [INFO] Executing instruction: Generate environment file
+2025/11/11 05:37:26.560052 [INFO] Executing instruction: Docker Specific Build Application
+2025/11/11 05:37:26.560055 [INFO] start build docker app
+2025/11/11 05:37:26.560057 [INFO] detected new app as docker compose app
+2025/11/11 05:37:26.560073 [INFO] Running command: docker compose config
+2025/11/11 05:37:26.678855 [INFO] Running command: docker compose config --services
+2025/11/11 05:37:26.786052 [INFO] backend
+
+2025/11/11 05:37:26.786078 [INFO] time="2025-11-11T05:37:26Z" level=warning msg="/var/app/staging/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+
+2025/11/11 05:37:26.786202 [INFO] fetching image names from Dockerfile /var/app/staging/Dockerfile
+2025/11/11 05:37:26.786285 [INFO] found images [node:18] in Dockerfile /var/app/staging/Dockerfile
+2025/11/11 05:37:26.786300 [INFO] Running command: docker compose pull --ignore-buildable
+2025/11/11 05:37:26.879679 [INFO] time="2025-11-11T05:37:26Z" level=warning msg="/var/app/staging/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ backend Skipped - No image to be pulled 
+
+2025/11/11 05:37:26.879706 [INFO] successfully execute command: docker compose pull --ignore-buildable
+2025/11/11 05:37:26.879723 [INFO] Running command: docker compose build
+2025/11/11 05:38:07.105393 [INFO] time="2025-11-11T05:37:26Z" level=warning msg="/var/app/staging/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ staging-backend  Built
+
+2025/11/11 05:38:07.109587 [INFO] successfully execute command: docker compose build
+2025/11/11 05:38:07.109604 [INFO] successfully build docker images
+2025/11/11 05:38:07.110692 [INFO] Executing instruction: configure X-Ray
+2025/11/11 05:38:07.113597 [INFO] X-Ray is not enabled.
+2025/11/11 05:38:07.113614 [INFO] Executing instruction: configure proxy Nginx
+2025/11/11 05:38:07.116390 [INFO] Recreating /var/proxy/staging/nginx
+2025/11/11 05:38:07.151270 [INFO] Executing instruction: configure healthd specific proxy conf
+2025/11/11 05:38:07.156375 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:38:07.189593 [WARN] Warning: process healthd is already registered...
+Deregistering the process ...
+2025/11/11 05:38:07.189620 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:38:07.198995 [INFO] Running command: systemctl is-active healthd.service
+2025/11/11 05:38:07.206607 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:38:07.216584 [INFO] Running command: systemctl stop healthd.service
+2025/11/11 05:38:07.372826 [INFO] Running command: systemctl disable healthd.service
+2025/11/11 05:38:07.755256 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/healthd.service".
+
+2025/11/11 05:38:07.756383 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:38:08.009200 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:38:08.021321 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:38:08.277032 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:38:08.286056 [INFO] Running command: systemctl is-enabled aws-eb.target
+2025/11/11 05:38:08.294237 [INFO] Running command: systemctl enable aws-eb.target
+2025/11/11 05:38:08.552721 [INFO] Running command: systemctl start aws-eb.target
+2025/11/11 05:38:08.562198 [INFO] Running command: systemctl enable healthd.service
+2025/11/11 05:38:08.853959 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/healthd.service → /etc/systemd/system/healthd.service.
+
+2025/11/11 05:38:08.853991 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:38:08.865292 [INFO] Running command: systemctl is-active healthd.service
+2025/11/11 05:38:08.872710 [INFO] Running command: systemctl start healthd.service
+2025/11/11 05:38:08.929100 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
+2025/11/11 05:38:08.930280 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
+2025/11/11 05:38:08.931432 [INFO] Executing instruction: configure log streaming
+2025/11/11 05:38:08.931449 [INFO] log streaming is not enabled
+2025/11/11 05:38:08.931452 [INFO] disable log stream
+2025/11/11 05:38:08.931463 [INFO] Running command: systemctl show -p PartOf amazon-cloudwatch-agent.service
+2025/11/11 05:38:08.946640 [INFO] Running command: systemctl stop amazon-cloudwatch-agent.service
+2025/11/11 05:38:08.957869 [INFO] Executing instruction: GetToggleForceRotate
+2025/11/11 05:38:08.957888 [INFO] Checking if logs need forced rotation
+2025/11/11 05:38:08.957903 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:38:09.672532 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:38:10.032390 [INFO] Generating rsyslog config from Procfile
+2025/11/11 05:38:10.037419 [INFO] Running command: systemctl restart rsyslog.service
+2025/11/11 05:38:10.361572 [INFO] Executing instruction: Configure Docker Logging
+2025/11/11 05:38:10.395836 [INFO] Executing instruction: PostBuildEbExtension
+2025/11/11 05:38:10.395981 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
+2025/11/11 05:38:10.395997 [INFO] Running command: /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2 --configsets Infra-EmbeddedPostBuild
+2025/11/11 05:38:10.791384 [INFO] Finished executing the config set Infra-EmbeddedPostBuild.
+
+2025/11/11 05:38:10.791431 [INFO] Executing instruction: CleanEbExtensions
+2025/11/11 05:38:10.791458 [INFO] Cleaned ebextensions subdirectories from app staging directory.
+2025/11/11 05:38:10.791461 [INFO] Executing instruction: RunAppDeployPreDeployHooks
+2025/11/11 05:38:10.791570 [INFO] Executing platform hooks in .platform/hooks/predeploy/
+2025/11/11 05:38:10.791582 [INFO] The dir .platform/hooks/predeploy/ does not exist
+2025/11/11 05:38:10.791585 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/predeploy
+2025/11/11 05:38:10.791590 [INFO] Executing instruction: stop X-Ray
+2025/11/11 05:38:10.791593 [INFO] stop X-Ray ...
+2025/11/11 05:38:10.791615 [INFO] Running command: systemctl show -p PartOf xray.service
+2025/11/11 05:38:10.821854 [WARN] stopProcess Warning: process xray is not registered 
+2025/11/11 05:38:10.821888 [INFO] Running command: systemctl stop xray.service
+2025/11/11 05:38:10.839167 [INFO] Executing instruction: Run Docker Container
+2025/11/11 05:38:10.839201 [INFO] stop currently running containers...
+2025/11/11 05:38:10.841117 [INFO] detected old app is docker compose app
+2025/11/11 05:38:10.841701 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:38:10.854969 [INFO] Running command: systemctl is-active eb-docker-compose-events.service
+2025/11/11 05:38:10.868600 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:38:10.879826 [INFO] Running command: systemctl stop eb-docker-compose-events.service
+2025/11/11 05:38:11.003471 [INFO] Running command: systemctl disable eb-docker-compose-events.service
+2025/11/11 05:38:11.337682 [INFO] Removed "/etc/systemd/system/docker.service.wants/eb-docker-compose-events.service".
+
+2025/11/11 05:38:11.337989 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:38:11.669792 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:38:11.684051 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:38:11.698700 [INFO] Running command: systemctl is-active eb-docker-compose-log.service
+2025/11/11 05:38:11.710036 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:38:11.724895 [INFO] Running command: systemctl stop eb-docker-compose-log.service
+2025/11/11 05:38:11.919074 [INFO] Running command: systemctl disable eb-docker-compose-log.service
+2025/11/11 05:38:12.254158 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:38:12.530032 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:38:12.538995 [INFO] Running command: docker compose down --rmi all
+2025/11/11 05:38:13.631552 [INFO] time="2025-11-11T05:38:13Z" level=warning msg="/var/app/current/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container raasystem-backend  Stopping
+ Container raasystem-backend  Stopped
+ Container raasystem-backend  Removing
+ Container raasystem-backend  Removed
+ Image current-backend:latest  Removing
+ Network current_default  Removing
+ Image current-backend:latest  Removed
+ Network current_default  Removed
+
+2025/11/11 05:38:13.631581 [INFO] Removing /var/app/current/ if it exists
+2025/11/11 05:38:13.821955 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2025/11/11 05:38:13.821988 [INFO] detected new app is docker compose app
+2025/11/11 05:38:13.821999 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:38:13.854622 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:38:14.186166 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:38:14.195743 [INFO] Running command: systemctl enable eb-docker-compose-events.service
+2025/11/11 05:38:14.525687 [INFO] Created symlink /etc/systemd/system/docker.service.wants/eb-docker-compose-events.service → /etc/systemd/system/eb-docker-compose-events.service.
+
+2025/11/11 05:38:14.525719 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:38:14.537678 [INFO] Running command: systemctl is-active eb-docker-compose-events.service
+2025/11/11 05:38:14.546848 [INFO] Running command: systemctl start eb-docker-compose-events.service
+2025/11/11 05:38:14.653951 [INFO] Running command: docker images | sed 1d
+2025/11/11 05:38:14.686127 [INFO] staging-backend   latest    eda042175685   12 seconds ago   1.18GB
+
+2025/11/11 05:38:14.686164 [INFO] tag image with command docker tag eda042175685 current-backend:latest
+2025/11/11 05:38:14.686174 [INFO] Running command: docker tag eda042175685 current-backend:latest
+2025/11/11 05:38:14.715286 [INFO] Running command: docker rmi staging-backend
+2025/11/11 05:38:14.739700 [INFO] Untagged: staging-backend:latest
+
+2025/11/11 05:38:14.739725 [INFO] Running command: docker compose up -d
+2025/11/11 05:38:15.783486 [INFO] time="2025-11-11T05:38:14Z" level=warning msg="/var/app/current/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Network current_default  Creating
+ Network current_default  Created
+ Container raasystem-backend  Creating
+ Container raasystem-backend  Created
+ Container raasystem-backend  Starting
+ Container raasystem-backend  Started
+
+2025/11/11 05:38:15.784084 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:38:15.805120 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:38:16.077506 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:38:16.115925 [INFO] Running command: systemctl enable eb-docker-compose-log.service
+2025/11/11 05:38:16.457996 [INFO] The unit files have no installation config (WantedBy=, RequiredBy=, Also=,
+Alias= settings in the [Install] section, and DefaultInstance= for template
+units). This means they are not meant to be enabled using systemctl.
+ 
+Possible reasons for having this kind of units are:
+• A unit may be statically enabled by being symlinked from another unit's
+  .wants/ or .requires/ directory.
+• A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+• A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+• In case of template units, the unit is meant to be enabled with some
+  instance name specified.
+
+2025/11/11 05:38:16.458040 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:38:16.477932 [INFO] Running command: systemctl is-active eb-docker-compose-log.service
+2025/11/11 05:38:16.493249 [INFO] Running command: systemctl start eb-docker-compose-log.service
+2025/11/11 05:38:16.610235 [INFO] Running command: docker compose ps -q
+2025/11/11 05:38:16.961525 [INFO] 9c911fadec3ebb945b4ca35d246d2bb26ce95b6a7151d469d1339ed129aec187
+
+2025/11/11 05:38:16.961541 [INFO] time="2025-11-11T05:38:16Z" level=warning msg="/var/app/current/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+
+2025/11/11 05:38:16.962331 [INFO] Cleanup images ...
+2025/11/11 05:38:16.962351 [INFO] Running command: docker images -a
+2025/11/11 05:38:16.983992 [INFO] REPOSITORY        TAG       IMAGE ID       CREATED          SIZE
+current-backend   latest    eda042175685   14 seconds ago   1.18GB
+
+2025/11/11 05:38:16.984020 [INFO] Running command: docker rmi `docker images -aq`
+2025/11/11 05:38:17.012309 [INFO] Error response from daemon: conflict: unable to delete eda042175685 (cannot be forced) - image is being used by running container 9c911fadec3e
+
+2025/11/11 05:38:17.012340 [INFO] Running command: docker images -a
+2025/11/11 05:38:17.031512 [INFO] REPOSITORY        TAG       IMAGE ID       CREATED          SIZE
+current-backend   latest    eda042175685   15 seconds ago   1.18GB
+
+2025/11/11 05:38:17.031547 [INFO] Pruning build cache ...
+2025/11/11 05:38:17.031557 [INFO] Running command: docker builder prune -f
+2025/11/11 05:38:18.999175 [INFO] ID						RECLAIMABLE	SIZE		LAST ACCESSED
+e6zr8pu928r3vczydu3trgd2m*              	true 		95B       	10 seconds ago
+eqhuky5yaeal2tk6hz67b2kip*              	true 	18.01MB   	10 seconds ago
+r7d8dean102b3q1vf99dbo75k               	true 	18.01MB   	17 minutes ago
+p2s88dljamxtn446grl3kwkiq*              	true 	351B      	11 seconds ago
+l1k44xj4p1m1nij4p4ei8qasg               	true 	77.71MB   	17 minutes ago
+mfphp5f7c2ji9e9hbfvylzv3y               	true 	126.6kB   	17 minutes ago
+y6we5wjlqhec3d1xjrs4f7rs6               	true 	0B        	17 minutes ago
+xkzclq6snjekfy4nd1ee00pd9               	true 	0B        	17 minutes ago
+e4efpkcbbbms82z2pu6r7poc2               	true 	0B        	17 minutes ago
+cwro8aqmsloy4jax47ykysrwi               	true 	0B        	17 minutes ago
+1yu3e0oeiray47350bgtmad8i               	true 	0B        	17 minutes ago
+Total:	113.9MB
+
+2025/11/11 05:38:19.002314 [INFO] Executing instruction: start X-Ray
+2025/11/11 05:38:19.003308 [INFO] X-Ray is not enabled.
+2025/11/11 05:38:19.003324 [INFO] Executing instruction: configureSqsd
+2025/11/11 05:38:19.004085 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2025/11/11 05:38:19.004103 [INFO] Executing instruction: startSqsd
+2025/11/11 05:38:19.004107 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2025/11/11 05:38:19.004110 [INFO] Executing instruction: Track pids in healthd
+2025/11/11 05:38:19.004874 [INFO] This is an enhanced health env...
+2025/11/11 05:38:19.004907 [INFO] Running command: systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2025/11/11 05:38:19.019069 [INFO] eb-docker-compose-events.service eb-docker-compose-log.service healthd.service eb-docker-events.service cfn-hup.service docker.service
+
+2025/11/11 05:38:19.019145 [INFO] Running command: systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2025/11/11 05:38:19.030966 [INFO] 
+
+2025/11/11 05:38:19.036476 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2025/11/11 05:38:19.037145 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2025/11/11 05:38:19.037205 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2025/11/11 05:38:19.037209 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2025/11/11 05:38:19.037217 [INFO] Executing cleanup logic
+2025/11/11 05:38:19.053362 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1762839499038,"severity":"INFO"}]}]}
+
+2025/11/11 05:38:19.055285 [INFO] Platform Engine finished execution on command: app-deploy
+
+2025/11/11 05:42:58.762053 [INFO] Starting...
+2025/11/11 05:42:58.762106 [INFO] Starting EBPlatform-PlatformEngine
+2025/11/11 05:42:58.762160 [INFO] reading event message file
+2025/11/11 05:42:58.779800 [INFO] Engine received EB command cfn-hup-exec
+
+2025/11/11 05:42:58.973258 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:42:59.553372 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:42:59.871072 [INFO] checking whether command tail-log is applicable to this instance...
+2025/11/11 05:42:59.871093 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/11/11 05:42:59.871101 [INFO] Engine command: (tail-log)
+
+2025/11/11 05:42:59.872434 [INFO] Executing instruction: GetTailLogs
+2025/11/11 05:42:59.872444 [INFO] Tail Logs...
+2025/11/11 05:42:59.878458 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+2025/11/11 05:42:59.881325 [INFO] Running command: tail -n 100 /var/log/eb-hooks.log
+2025/11/11 05:42:59.883133 [INFO] Running command: tail -n 100 /var/log/eb-docker/containers/eb-current-app/eb-stdouterr.log
+2025/11/11 05:42:59.884998 [INFO] Running command: tail -n 100 /var/log/docker-events.log
+2025/11/11 05:42:59.888761 [INFO] Running command: tail -n 100 /var/log/docker-compose-events.log
+2025/11/11 05:42:59.891276 [INFO] Running command: tail -n 100 /var/log/docker
+2025/11/11 05:42:59.964735 [INFO] Executing cleanup logic
+2025/11/11 05:42:59.964808 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1762839779964,"severity":"INFO"}]}]}
+
+2025/11/11 05:42:59.964825 [INFO] Platform Engine finished execution on command: tail-log
+
+2025/11/11 05:47:04.090791 [INFO] Starting...
+2025/11/11 05:47:04.090849 [INFO] Starting EBPlatform-PlatformEngine
+2025/11/11 05:47:04.090883 [INFO] reading event message file
+2025/11/11 05:47:04.091253 [INFO] Engine received EB command cfn-hup-exec
+
+2025/11/11 05:47:04.164726 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:47:04.473299 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:47:04.761076 [INFO] checking whether command app-deploy is applicable to this instance...
+2025/11/11 05:47:04.761090 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/11/11 05:47:04.761095 [INFO] Engine command: (app-deploy)
+
+2025/11/11 05:47:04.761100 [INFO] Downloading EB Application...
+2025/11/11 05:47:04.761102 [INFO] Region: us-west-2
+2025/11/11 05:47:04.761105 [INFO] envID: e-5anwd3ztn7
+2025/11/11 05:47:04.761108 [INFO] envBucket: elasticbeanstalk-us-west-2-724772066825
+2025/11/11 05:47:04.761110 [INFO] accountID: 724772066825
+2025/11/11 05:47:04.761114 [INFO] Using manifest file name from command request
+2025/11/11 05:47:04.761120 [INFO] Manifest name is : manifest_1762840021465
+2025/11/11 05:47:04.761123 [INFO] Download app version manifest
+2025/11/11 05:47:04.761368 [INFO] Downloading: bucket: elasticbeanstalk-us-west-2-724772066825, object: resources/environments/e-5anwd3ztn7/_runtime/versions/manifest_1762840021465, expected bucket owner: 724772066825
+2025/11/11 05:47:04.816587 [INFO] Download successful114bytes downloaded
+2025/11/11 05:47:04.816726 [INFO] Trying to read and parse version manifest...
+2025/11/11 05:47:04.816912 [INFO] Downloading: bucket: elasticbeanstalk-us-west-2-724772066825, object: resources/environments/e-5anwd3ztn7/_runtime/_versions/raasystem-backend/app-cfd5-251111_004652411671, expected bucket owner: 724772066825
+2025/11/11 05:47:04.872036 [INFO] Download successful5239335bytes downloaded
+2025/11/11 05:47:04.875833 [INFO] Executing instruction: ElectLeader
+2025/11/11 05:47:04.875850 [INFO] Running leader election for instance i-0f85d4776fcd00c0b...
+2025/11/11 05:47:04.875854 [INFO] Calling the cfn-elect-cmd-leader to elect the command leader.
+2025/11/11 05:47:04.875869 [INFO] Running command: /opt/aws/bin/cfn-elect-cmd-leader --stack arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b --command-name ElasticBeanstalkCommand-AWSEBAutoScalingGroup --invocation-id bd0d4d35-97fc-4464-8b31-be7436067cbd --listener-id i-0f85d4776fcd00c0b --region us-west-2
+2025/11/11 05:47:05.198683 [INFO] Instance is Leader.
+2025/11/11 05:47:05.198724 [INFO] Executing instruction: stopSqsd
+2025/11/11 05:47:05.198728 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
+2025/11/11 05:47:05.198731 [INFO] Executing instruction: PreBuildEbExtension
+2025/11/11 05:47:05.198734 [INFO] Starting executing the config set Infra-EmbeddedPreBuild.
+2025/11/11 05:47:05.198746 [INFO] Running command: /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2 --configsets Infra-EmbeddedPreBuild
+2025/11/11 05:47:05.533150 [INFO] Finished executing the config set Infra-EmbeddedPreBuild.
+
+2025/11/11 05:47:05.533174 [INFO] Executing instruction: StagedockerApplication
+2025/11/11 05:47:05.533186 [INFO] Running command: docker ps -a -q -f status=running
+2025/11/11 05:47:05.564041 [INFO] Pruning containers ...
+2025/11/11 05:47:05.564070 [INFO] Running command: docker ps -a
+2025/11/11 05:47:05.582877 [INFO] CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS                          PORTS     NAMES
+9c911fadec3e   current-backend   "docker-entrypoint.s…"   8 minutes ago   Restarting (1) 58 seconds ago             raasystem-backend
+
+2025/11/11 05:47:05.582916 [INFO] Running command: docker container prune -f
+2025/11/11 05:47:05.598833 [INFO] Total reclaimed space: 0B
+
+2025/11/11 05:47:05.598859 [INFO] Running command: docker ps -a
+2025/11/11 05:47:05.614839 [INFO] CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS                          PORTS     NAMES
+9c911fadec3e   current-backend   "docker-entrypoint.s…"   8 minutes ago   Restarting (1) 58 seconds ago             raasystem-backend
+
+2025/11/11 05:47:05.614862 [INFO] Recreating /var/app/staging/
+2025/11/11 05:47:05.614939 [INFO] Recreating /var/log/eb-docker/containers/eb-current-app
+2025/11/11 05:47:05.615224 [INFO] Running command: /bin/file -m /opt/elasticbeanstalk/config/private/beanstalk-magic -b --mime-type /opt/elasticbeanstalk/deployment/app_source_bundle
+2025/11/11 05:47:05.625654 [INFO] application/zip
+
+2025/11/11 05:47:05.625676 [INFO] app source bundle is zip file ...
+2025/11/11 05:47:05.625682 [INFO] extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/
+2025/11/11 05:47:05.625694 [INFO] Running command: /usr/bin/unzip -q -o /opt/elasticbeanstalk/deployment/app_source_bundle -d /var/app/staging/
+2025/11/11 05:47:05.900999 [INFO] finished extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/ successfully
+2025/11/11 05:47:05.901020 [INFO] Executing instruction: RunAppDeployPreBuildHooks
+2025/11/11 05:47:05.901061 [INFO] Executing platform hooks in .platform/hooks/prebuild/
+2025/11/11 05:47:05.901083 [INFO] The dir .platform/hooks/prebuild/ does not exist
+2025/11/11 05:47:05.901087 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/prebuild
+2025/11/11 05:47:05.901094 [INFO] Executing instruction: Generate environment file
+2025/11/11 05:47:05.901178 [INFO] Executing instruction: Docker Specific Build Application
+2025/11/11 05:47:05.901187 [INFO] start build docker app
+2025/11/11 05:47:05.901190 [INFO] detected new app as docker compose app
+2025/11/11 05:47:05.901207 [INFO] Running command: docker compose config
+2025/11/11 05:47:06.122138 [INFO] Running command: docker compose config --services
+2025/11/11 05:47:06.222261 [INFO] backend
+
+2025/11/11 05:47:06.222288 [INFO] time="2025-11-11T05:47:06Z" level=warning msg="/var/app/staging/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+
+2025/11/11 05:47:06.222413 [INFO] fetching image names from Dockerfile /var/app/staging/Dockerfile
+2025/11/11 05:47:06.222496 [INFO] found images [node:18] in Dockerfile /var/app/staging/Dockerfile
+2025/11/11 05:47:06.222512 [INFO] Running command: docker compose pull --ignore-buildable
+2025/11/11 05:47:06.317099 [INFO] time="2025-11-11T05:47:06Z" level=warning msg="/var/app/staging/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ backend Skipped - No image to be pulled 
+
+2025/11/11 05:47:06.317127 [INFO] successfully execute command: docker compose pull --ignore-buildable
+2025/11/11 05:47:06.317140 [INFO] Running command: docker compose build
+2025/11/11 05:47:08.646744 [INFO] time="2025-11-11T05:47:06Z" level=warning msg="/var/app/staging/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ staging-backend  Built
+
+2025/11/11 05:47:08.648403 [INFO] successfully execute command: docker compose build
+2025/11/11 05:47:08.648421 [INFO] successfully build docker images
+2025/11/11 05:47:08.648426 [INFO] Executing instruction: configure X-Ray
+2025/11/11 05:47:08.649169 [INFO] X-Ray is not enabled.
+2025/11/11 05:47:08.649182 [INFO] Executing instruction: configure proxy Nginx
+2025/11/11 05:47:08.650021 [INFO] Recreating /var/proxy/staging/nginx
+2025/11/11 05:47:08.670047 [INFO] Executing instruction: configure healthd specific proxy conf
+2025/11/11 05:47:08.673798 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:47:08.709647 [WARN] Warning: process healthd is already registered...
+Deregistering the process ...
+2025/11/11 05:47:08.709693 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:47:08.718850 [INFO] Running command: systemctl is-active healthd.service
+2025/11/11 05:47:08.726460 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:47:08.735453 [INFO] Running command: systemctl stop healthd.service
+2025/11/11 05:47:08.852809 [INFO] Running command: systemctl disable healthd.service
+2025/11/11 05:47:09.332446 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/healthd.service".
+
+2025/11/11 05:47:09.333273 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:47:09.614221 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:47:09.626511 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:47:09.902467 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:47:09.910680 [INFO] Running command: systemctl is-enabled aws-eb.target
+2025/11/11 05:47:09.919154 [INFO] Running command: systemctl enable aws-eb.target
+2025/11/11 05:47:10.204158 [INFO] Running command: systemctl start aws-eb.target
+2025/11/11 05:47:10.213289 [INFO] Running command: systemctl enable healthd.service
+2025/11/11 05:47:10.452882 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/healthd.service → /etc/systemd/system/healthd.service.
+
+2025/11/11 05:47:10.452915 [INFO] Running command: systemctl show -p PartOf healthd.service
+2025/11/11 05:47:10.464191 [INFO] Running command: systemctl is-active healthd.service
+2025/11/11 05:47:10.472345 [INFO] Running command: systemctl start healthd.service
+2025/11/11 05:47:10.536415 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
+2025/11/11 05:47:10.537623 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
+2025/11/11 05:47:10.538743 [INFO] Executing instruction: configure log streaming
+2025/11/11 05:47:10.539497 [INFO] log streaming is not enabled
+2025/11/11 05:47:10.539508 [INFO] disable log stream
+2025/11/11 05:47:10.539520 [INFO] Running command: systemctl show -p PartOf amazon-cloudwatch-agent.service
+2025/11/11 05:47:10.558784 [INFO] Running command: systemctl stop amazon-cloudwatch-agent.service
+2025/11/11 05:47:10.577649 [INFO] Executing instruction: GetToggleForceRotate
+2025/11/11 05:47:10.577676 [INFO] Checking if logs need forced rotation
+2025/11/11 05:47:10.577696 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:47:11.247513 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:47:11.640562 [INFO] Generating rsyslog config from Procfile
+2025/11/11 05:47:11.643534 [INFO] Running command: systemctl restart rsyslog.service
+2025/11/11 05:47:11.922223 [INFO] Executing instruction: Configure Docker Logging
+2025/11/11 05:47:11.949898 [INFO] Executing instruction: PostBuildEbExtension
+2025/11/11 05:47:11.949920 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
+2025/11/11 05:47:11.949938 [INFO] Running command: /opt/aws/bin/cfn-init -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2 --configsets Infra-EmbeddedPostBuild
+2025/11/11 05:47:12.298419 [INFO] Finished executing the config set Infra-EmbeddedPostBuild.
+
+2025/11/11 05:47:12.298444 [INFO] Executing instruction: CleanEbExtensions
+2025/11/11 05:47:12.298520 [INFO] Cleaned ebextensions subdirectories from app staging directory.
+2025/11/11 05:47:12.298533 [INFO] Executing instruction: RunAppDeployPreDeployHooks
+2025/11/11 05:47:12.298589 [INFO] Executing platform hooks in .platform/hooks/predeploy/
+2025/11/11 05:47:12.298607 [INFO] The dir .platform/hooks/predeploy/ does not exist
+2025/11/11 05:47:12.298609 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/predeploy
+2025/11/11 05:47:12.298616 [INFO] Executing instruction: stop X-Ray
+2025/11/11 05:47:12.298619 [INFO] stop X-Ray ...
+2025/11/11 05:47:12.298629 [INFO] Running command: systemctl show -p PartOf xray.service
+2025/11/11 05:47:12.313738 [WARN] stopProcess Warning: process xray is not registered 
+2025/11/11 05:47:12.313773 [INFO] Running command: systemctl stop xray.service
+2025/11/11 05:47:12.329705 [INFO] Executing instruction: Run Docker Container
+2025/11/11 05:47:12.329736 [INFO] stop currently running containers...
+2025/11/11 05:47:12.329763 [INFO] detected old app is docker compose app
+2025/11/11 05:47:12.329774 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:47:12.341348 [INFO] Running command: systemctl is-active eb-docker-compose-events.service
+2025/11/11 05:47:12.348996 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:47:12.358830 [INFO] Running command: systemctl stop eb-docker-compose-events.service
+2025/11/11 05:47:12.492487 [INFO] Running command: systemctl disable eb-docker-compose-events.service
+2025/11/11 05:47:12.766284 [INFO] Removed "/etc/systemd/system/docker.service.wants/eb-docker-compose-events.service".
+
+2025/11/11 05:47:12.766423 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:47:13.058889 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:47:13.068317 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:47:13.080350 [INFO] Running command: systemctl is-active eb-docker-compose-log.service
+2025/11/11 05:47:13.087895 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:47:13.097728 [INFO] Running command: systemctl stop eb-docker-compose-log.service
+2025/11/11 05:47:13.174706 [INFO] Running command: systemctl disable eb-docker-compose-log.service
+2025/11/11 05:47:13.445861 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:47:13.747386 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:47:13.756300 [INFO] Running command: docker compose down --rmi all
+2025/11/11 05:47:14.692549 [INFO] time="2025-11-11T05:47:14Z" level=warning msg="/var/app/current/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container raasystem-backend  Stopping
+ Container raasystem-backend  Stopped
+ Container raasystem-backend  Removing
+ Container raasystem-backend  Removed
+ Image current-backend:latest  Removing
+ Network current_default  Removing
+ Image current-backend:latest  Removed
+ Network current_default  Removed
+
+2025/11/11 05:47:14.692579 [INFO] Removing /var/app/current/ if it exists
+2025/11/11 05:47:14.860557 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2025/11/11 05:47:14.860590 [INFO] detected new app is docker compose app
+2025/11/11 05:47:14.860604 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:47:14.886750 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:47:15.179155 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:47:15.188038 [INFO] Running command: systemctl enable eb-docker-compose-events.service
+2025/11/11 05:47:15.479530 [INFO] Created symlink /etc/systemd/system/docker.service.wants/eb-docker-compose-events.service → /etc/systemd/system/eb-docker-compose-events.service.
+
+2025/11/11 05:47:15.479570 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-events.service
+2025/11/11 05:47:15.492297 [INFO] Running command: systemctl is-active eb-docker-compose-events.service
+2025/11/11 05:47:15.499863 [INFO] Running command: systemctl start eb-docker-compose-events.service
+2025/11/11 05:47:15.563608 [INFO] Running command: docker images | sed 1d
+2025/11/11 05:47:15.595469 [INFO] staging-backend   latest    9fd831102c46   9 minutes ago   1.18GB
+
+2025/11/11 05:47:15.595505 [INFO] tag image with command docker tag 9fd831102c46 current-backend:latest
+2025/11/11 05:47:15.595516 [INFO] Running command: docker tag 9fd831102c46 current-backend:latest
+2025/11/11 05:47:15.622171 [INFO] Running command: docker rmi staging-backend
+2025/11/11 05:47:15.645603 [INFO] Untagged: staging-backend:latest
+
+2025/11/11 05:47:15.645633 [INFO] Running command: docker compose up -d
+2025/11/11 05:47:16.505516 [INFO] time="2025-11-11T05:47:15Z" level=warning msg="/var/app/current/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Network current_default  Creating
+ Network current_default  Created
+ Container raasystem-backend  Creating
+ Container raasystem-backend  Created
+ Container raasystem-backend  Starting
+ Container raasystem-backend  Started
+
+2025/11/11 05:47:16.505546 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:47:16.530086 [INFO] Running command: systemctl daemon-reload
+2025/11/11 05:47:16.823015 [INFO] Running command: systemctl reset-failed
+2025/11/11 05:47:16.865328 [INFO] Running command: systemctl enable eb-docker-compose-log.service
+2025/11/11 05:47:17.199106 [INFO] The unit files have no installation config (WantedBy=, RequiredBy=, Also=,
+Alias= settings in the [Install] section, and DefaultInstance= for template
+units). This means they are not meant to be enabled using systemctl.
+ 
+Possible reasons for having this kind of units are:
+• A unit may be statically enabled by being symlinked from another unit's
+  .wants/ or .requires/ directory.
+• A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+• A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+• In case of template units, the unit is meant to be enabled with some
+  instance name specified.
+
+2025/11/11 05:47:17.199151 [INFO] Running command: systemctl show -p PartOf eb-docker-compose-log.service
+2025/11/11 05:47:17.217235 [INFO] Running command: systemctl is-active eb-docker-compose-log.service
+2025/11/11 05:47:17.228808 [INFO] Running command: systemctl start eb-docker-compose-log.service
+2025/11/11 05:47:17.333343 [INFO] Running command: docker compose ps -q
+2025/11/11 05:47:17.765531 [INFO] 903e9b0a55bdca312e811b44fafe39867c5651f37d6708ed606e8d65d2b1ca24
+
+2025/11/11 05:47:17.765551 [INFO] time="2025-11-11T05:47:17Z" level=warning msg="/var/app/current/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+
+2025/11/11 05:47:17.765675 [INFO] Cleanup images ...
+2025/11/11 05:47:17.768434 [INFO] Running command: docker images -a
+2025/11/11 05:47:17.789849 [INFO] REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
+current-backend   latest    9fd831102c46   9 minutes ago   1.18GB
+
+2025/11/11 05:47:17.789885 [INFO] Running command: docker rmi `docker images -aq`
+2025/11/11 05:47:17.823417 [INFO] Error response from daemon: conflict: unable to delete 9fd831102c46 (cannot be forced) - image is being used by running container 903e9b0a55bd
+
+2025/11/11 05:47:17.823453 [INFO] Running command: docker images -a
+2025/11/11 05:47:17.839609 [INFO] REPOSITORY        TAG       IMAGE ID       CREATED         SIZE
+current-backend   latest    9fd831102c46   9 minutes ago   1.18GB
+
+2025/11/11 05:47:17.839635 [INFO] Pruning build cache ...
+2025/11/11 05:47:17.839646 [INFO] Running command: docker builder prune -f
+2025/11/11 05:47:18.305117 [INFO] ID						RECLAIMABLE	SIZE		LAST ACCESSED
+6wjb6gcn9a5psr9gu58aqffj7*              	true 		347B      	9 seconds ago
+ssn7f2mbcwni70cxrpxjp0rrc*              	true 	95B       	9 seconds ago
+yryx52w5qgmawargn33palu8p*              	true 	18.01MB   	9 seconds ago
+Total:	18.01MB
+
+2025/11/11 05:47:18.305147 [INFO] Executing instruction: start X-Ray
+2025/11/11 05:47:18.305152 [INFO] X-Ray is not enabled.
+2025/11/11 05:47:18.305155 [INFO] Executing instruction: configureSqsd
+2025/11/11 05:47:18.305159 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2025/11/11 05:47:18.305161 [INFO] Executing instruction: startSqsd
+2025/11/11 05:47:18.305164 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2025/11/11 05:47:18.305166 [INFO] Executing instruction: Track pids in healthd
+2025/11/11 05:47:18.305170 [INFO] This is an enhanced health env...
+2025/11/11 05:47:18.305181 [INFO] Running command: systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2025/11/11 05:47:18.345826 [INFO] healthd.service docker.service eb-docker-compose-log.service eb-docker-events.service eb-docker-compose-events.service cfn-hup.service
+
+2025/11/11 05:47:18.345851 [INFO] Running command: systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2025/11/11 05:47:18.362366 [INFO] 
+
+2025/11/11 05:47:18.367454 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2025/11/11 05:47:18.367639 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2025/11/11 05:47:18.367665 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2025/11/11 05:47:18.367669 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2025/11/11 05:47:18.367677 [INFO] Executing cleanup logic
+2025/11/11 05:47:18.371699 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1762840038368,"severity":"INFO"}]}]}
+
+2025/11/11 05:47:18.371864 [INFO] Platform Engine finished execution on command: app-deploy
+
+2025/11/11 05:50:09.047528 [INFO] Starting...
+2025/11/11 05:50:09.048362 [INFO] Starting EBPlatform-PlatformEngine
+2025/11/11 05:50:09.048419 [INFO] reading event message file
+2025/11/11 05:50:09.062093 [INFO] Engine received EB command cfn-hup-exec
+
+2025/11/11 05:50:09.243228 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 05:50:09.581038 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 05:50:09.873152 [INFO] checking whether command tail-log is applicable to this instance...
+2025/11/11 05:50:09.873168 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/11/11 05:50:09.873173 [INFO] Engine command: (tail-log)
+
+2025/11/11 05:50:09.874442 [INFO] Executing instruction: GetTailLogs
+2025/11/11 05:50:09.874448 [INFO] Tail Logs...
+2025/11/11 05:50:09.880583 [INFO] Running command: tail -n 100 /var/log/docker-events.log
+2025/11/11 05:50:09.885215 [INFO] Running command: tail -n 100 /var/log/docker-compose-events.log
+2025/11/11 05:50:09.887789 [INFO] Running command: tail -n 100 /var/log/docker
+2025/11/11 05:50:09.891411 [INFO] Running command: tail -n 100 /var/log/eb-engine.log
+2025/11/11 05:50:09.893933 [INFO] Running command: tail -n 100 /var/log/eb-hooks.log
+2025/11/11 05:50:09.895843 [INFO] Running command: tail -n 100 /var/log/eb-docker/containers/eb-current-app/eb-stdouterr.log
+2025/11/11 05:50:09.967506 [INFO] Executing cleanup logic
+2025/11/11 05:50:09.967590 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1762840209967,"severity":"INFO"}]}]}
+
+2025/11/11 05:50:09.967605 [INFO] Platform Engine finished execution on command: tail-log
+
+2025/11/11 06:22:12.165117 [INFO] Starting...
+2025/11/11 06:22:12.165169 [INFO] Starting EBPlatform-PlatformEngine
+2025/11/11 06:22:12.165197 [INFO] reading event message file
+2025/11/11 06:22:12.167575 [INFO] Engine received EB command cfn-hup-exec
+
+2025/11/11 06:22:12.242853 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBAutoScalingGroup --region us-west-2
+2025/11/11 06:22:12.568451 [INFO] Running command: /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:us-west-2:724772066825:stack/awseb-e-5anwd3ztn7-stack/bef66300-bebd-11f0-88f9-02972e9c103b -r AWSEBBeanstalkMetadata --region us-west-2
+2025/11/11 06:22:12.861285 [INFO] checking whether command bundle-log is applicable to this instance...
+2025/11/11 06:22:12.861297 [INFO] this command is applicable to the instance, thus instance should execute command
+2025/11/11 06:22:12.861300 [INFO] Engine command: (bundle-log)
+
+2025/11/11 06:22:12.861351 [INFO] Executing instruction: GetBundleLogs
+2025/11/11 06:22:12.861354 [INFO] Bundle Logs...

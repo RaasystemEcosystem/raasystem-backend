@@ -1,0 +1,1 @@
+// Rabex component stub

@@ -1,0 +1,79 @@
+2025-11-11 05:18:27,355 [INFO] -----------------------Starting build-----------------------
+2025-11-11 05:18:27,360 [INFO] Running configSets: _OnInstanceBoot
+2025-11-11 05:18:27,362 [INFO] Running configSet _OnInstanceBoot
+2025-11-11 05:18:27,365 [INFO] Running config AWSEBBaseConfig
+2025-11-11 05:18:27,595 [INFO] Command clearbackupfiles succeeded
+2025-11-11 05:18:27,598 [INFO] Running config AWSEBCfnHupEndpointOverride
+2025-11-11 05:18:27,603 [INFO] Command clearbackupfiles succeeded
+2025-11-11 05:18:27,604 [INFO] ConfigSets completed
+2025-11-11 05:18:27,604 [INFO] -----------------------Build complete-----------------------
+2025-11-11 05:20:37,305 [INFO] -----------------------Starting build-----------------------
+2025-11-11 05:20:37,309 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2025-11-11 05:20:37,311 [INFO] Running configSet Infra-EmbeddedPreBuild
+2025-11-11 05:20:37,311 [INFO] ConfigSets completed
+2025-11-11 05:20:37,311 [INFO] -----------------------Build complete-----------------------
+2025-11-11 05:21:13,309 [INFO] -----------------------Starting build-----------------------
+2025-11-11 05:21:13,316 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2025-11-11 05:21:13,319 [INFO] Running configSet Infra-EmbeddedPostBuild
+2025-11-11 05:21:13,319 [INFO] ConfigSets completed
+2025-11-11 05:21:13,319 [INFO] -----------------------Build complete-----------------------
+2025-11-11 05:37:26,171 [INFO] -----------------------Starting build-----------------------
+2025-11-11 05:37:26,178 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2025-11-11 05:37:26,179 [INFO] Running configSet Infra-EmbeddedPreBuild
+2025-11-11 05:37:26,180 [INFO] ConfigSets completed
+2025-11-11 05:37:26,181 [INFO] -----------------------Build complete-----------------------
+2025-11-11 05:38:10,744 [INFO] -----------------------Starting build-----------------------
+2025-11-11 05:38:10,751 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2025-11-11 05:38:10,753 [INFO] Running configSet Infra-EmbeddedPostBuild
+2025-11-11 05:38:10,754 [INFO] ConfigSets completed
+2025-11-11 05:38:10,754 [INFO] -----------------------Build complete-----------------------
+2025-11-11 05:47:05,490 [INFO] -----------------------Starting build-----------------------
+2025-11-11 05:47:05,497 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2025-11-11 05:47:05,499 [INFO] Running configSet Infra-EmbeddedPreBuild
+2025-11-11 05:47:05,501 [INFO] ConfigSets completed
+2025-11-11 05:47:05,501 [INFO] -----------------------Build complete-----------------------
+2025-11-11 05:47:12,257 [INFO] -----------------------Starting build-----------------------
+2025-11-11 05:47:12,263 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2025-11-11 05:47:12,265 [INFO] Running configSet Infra-EmbeddedPostBuild
+2025-11-11 05:47:12,266 [INFO] ConfigSets completed
+2025-11-11 05:47:12,266 [INFO] -----------------------Build complete-----------------------
+2025-11-11 14:19:28,775 [INFO] -----------------------Starting build-----------------------
+2025-11-11 14:19:28,780 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2025-11-11 14:19:28,782 [INFO] Running configSet Infra-EmbeddedPreBuild
+2025-11-11 14:19:28,783 [INFO] ConfigSets completed
+2025-11-11 14:19:28,783 [INFO] -----------------------Build complete-----------------------
+2025-11-11 14:19:35,547 [INFO] -----------------------Starting build-----------------------
+2025-11-11 14:19:35,553 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2025-11-11 14:19:35,555 [INFO] Running configSet Infra-EmbeddedPostBuild
+2025-11-11 14:19:35,556 [INFO] ConfigSets completed
+2025-11-11 14:19:35,556 [INFO] -----------------------Build complete-----------------------
+2025-11-11 14:21:48,915 [INFO] -----------------------Starting build-----------------------
+2025-11-11 14:21:48,921 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2025-11-11 14:21:48,923 [INFO] Running configSet Infra-EmbeddedPreBuild
+2025-11-11 14:21:48,924 [INFO] ConfigSets completed
+2025-11-11 14:21:48,924 [INFO] -----------------------Build complete-----------------------
+2025-11-11 14:21:54,717 [INFO] -----------------------Starting build-----------------------
+2025-11-11 14:21:54,723 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2025-11-11 14:21:54,725 [INFO] Running configSet Infra-EmbeddedPostBuild
+2025-11-11 14:21:54,726 [INFO] ConfigSets completed
+2025-11-11 14:21:54,726 [INFO] -----------------------Build complete-----------------------
+2025-11-11 14:26:10,397 [INFO] -----------------------Starting build-----------------------
+2025-11-11 14:26:10,404 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2025-11-11 14:26:10,407 [INFO] Running configSet Infra-EmbeddedPreBuild
+2025-11-11 14:26:10,407 [INFO] ConfigSets completed
+2025-11-11 14:26:10,408 [INFO] -----------------------Build complete-----------------------
+2025-11-11 14:26:16,241 [INFO] -----------------------Starting build-----------------------
+2025-11-11 14:26:16,247 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2025-11-11 14:26:16,249 [INFO] Running configSet Infra-EmbeddedPostBuild
+2025-11-11 14:26:16,250 [INFO] ConfigSets completed
+2025-11-11 14:26:16,250 [INFO] -----------------------Build complete-----------------------
+2025-11-11 14:41:28,128 [INFO] -----------------------Starting build-----------------------
+2025-11-11 14:41:28,133 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2025-11-11 14:41:28,135 [INFO] Running configSet Infra-EmbeddedPreBuild
+2025-11-11 14:41:28,136 [INFO] ConfigSets completed
+2025-11-11 14:41:28,136 [INFO] -----------------------Build complete-----------------------
+2025-11-11 14:41:34,467 [INFO] -----------------------Starting build-----------------------
+2025-11-11 14:41:34,473 [INFO] Running configSets: Infra-EmbeddedPostBuild
+2025-11-11 14:41:34,475 [INFO] Running configSet Infra-EmbeddedPostBuild
+2025-11-11 14:41:34,476 [INFO] ConfigSets completed
+2025-11-11 14:41:34,477 [INFO] -----------------------Build complete-----------------------

@@ -1,0 +1,18 @@
+2025/11/11 05:25:50.362344 [INFO] Cleaning log publish record...
+2025/11/11 05:25:50.362392 [INFO] Start log publish job.
+2025/11/11 05:25:50.362396 [INFO] Start publish file /tmp/TailLogs-1762838750349.txt
+2025/11/11 05:25:50.423313 [INFO] Successful upload file /tmp/TailLogs-1762838750349.txt to s3 resources/environments/logs/tail/e-5anwd3ztn7/i-0f85d4776fcd00c0b/TailLogs-1762838750349.txt
+2025/11/11 05:25:50.423454 [INFO] Finished log publish job.
+2025/11/11 05:42:59.894534 [INFO] Cleaning log publish record...
+2025/11/11 05:42:59.895228 [INFO] /tmp/TailLogs-1762838750349.txt exists, no need for clean up
+2025/11/11 05:42:59.895234 [INFO] Start log publish job.
+2025/11/11 05:42:59.895236 [INFO] Start publish file /tmp/TailLogs-1762839779878.txt
+2025/11/11 05:42:59.964575 [INFO] Successful upload file /tmp/TailLogs-1762839779878.txt to s3 resources/environments/logs/tail/e-5anwd3ztn7/i-0f85d4776fcd00c0b/TailLogs-1762839779878.txt
+2025/11/11 05:42:59.964727 [INFO] Finished log publish job.
+2025/11/11 05:50:09.898163 [INFO] Cleaning log publish record...
+2025/11/11 05:50:09.898944 [INFO] /tmp/TailLogs-1762838750349.txt exists, no need for clean up
+2025/11/11 05:50:09.898956 [INFO] /tmp/TailLogs-1762839779878.txt exists, no need for clean up
+2025/11/11 05:50:09.898961 [INFO] Start log publish job.
+2025/11/11 05:50:09.898964 [INFO] Start publish file /tmp/TailLogs-1762840209880.txt
+2025/11/11 05:50:09.967358 [INFO] Successful upload file /tmp/TailLogs-1762840209880.txt to s3 resources/environments/logs/tail/e-5anwd3ztn7/i-0f85d4776fcd00c0b/TailLogs-1762840209880.txt
+2025/11/11 05:50:09.967498 [INFO] Finished log publish job.
