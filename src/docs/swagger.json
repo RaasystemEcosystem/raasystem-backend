@@ -6,32 +6,80 @@
     "description": "Unified API powering RaasBridge, RaasPay, and RBT — the Raasystem Real World Assets engine integrating Alpaca (Stocks), ICE (Commodities), XRP (Payments), USDT (Stablecoins), RAAS (Gold-backed Crypto), RST (RaastockToken), and RBT (RaasBridge Token)."
   },
   "servers": [
-    { "url": "http://localhost:8000", "description": "Local Development Server" },
-    { "url": "https://api.raasystem.io", "description": "Production Server" }
+    {
+      "url": "{protocol}://{host}:{port}",
+      "description": "Dynamic server (local or production)",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": ["http", "https"]
+        },
+        "host": {
+          "default": "api.raasystem.io",
+          "enum": ["localhost", "api.raasystem.io"]
+        },
+        "port": {
+          "default": "443",
+          "enum": ["8000", "443"]
+        }
+      }
+    }
   ],
   "paths": {
     "/api/raaspay/health": { "get": { "summary": "Healthcheck", "responses": { "200": { "description": "OK" } } } },
     "/api/raaspay/payments": { "get": { "summary": "List payments", "responses": { "200": { "description": "OK" } } } },
-    "/api/raaspay/transfer": { "post": { "summary": "Create payment", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Payment" } } } }, "responses": { "201": { "description": "Created" } } } },
+    "/api/raaspay/transfer": {
+      "post": {
+        "summary": "Create payment",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Payment" } } } },
+        "responses": { "201": { "description": "Created" } }
+      }
+    },
     "/api/oracle/price": { "get": { "summary": "Get latest gold price from oracle", "responses": { "200": { "description": "OK" } } } },
 
-    "/api/rbt": { 
-      "get": { "summary": "List all RBT holdings", "parameters": [{ "name": "wallet_address", "in": "query", "schema": { "type": "string" }, "description": "Optional wallet address filter" }], "responses": { "200": { "description": "Array of RBT holdings", "content": { "application/json": { "schema": { "type": "array", "items": { "$ref": "#/components/schemas/RBT" } } } } } } } 
+    "/api/rbt": {
+      "get": {
+        "summary": "List all RBT holdings",
+        "parameters": [
+          { "name": "wallet_address", "in": "query", "schema": { "type": "string" }, "description": "Optional wallet address filter" }
+        ],
+        "responses": { "200": { "description": "Array of RBT holdings", "content": { "application/json": { "schema": { "type": "array", "items": { "$ref": "#/components/schemas/RBT" } } } } } }
+      }
     },
     "/api/rbt/mint": {
-      "post": { "summary": "Mint new RBT", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBTMintRequest" } } } }, "responses": { "200": { "description": "RBT minted successfully", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBT" } } } } } }
+      "post": {
+        "summary": "Mint new RBT",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBTMintRequest" } } } },
+        "responses": { "200": { "description": "RBT minted successfully", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBT" } } } } }
+      }
     },
     "/api/rbt/burn": {
-      "post": { "summary": "Burn RBT", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBTBurnRequest" } } } }, "responses": { "200": { "description": "RBT burned successfully", "content": { "application/json": { "schema": { "type": "object", "properties": { "status": { "type": "string" }, "burned": { "type": "number" } } } } } } } }
+      "post": {
+        "summary": "Burn RBT",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBTBurnRequest" } } } },
+        "responses": { "200": { "description": "RBT burned successfully", "content": { "application/json": { "schema": { "type": "object", "properties": { "status": { "type": "string" }, "burned": { "type": "number" } } } } } } }
+      }
     },
     "/api/rbt/adjust": {
-      "post": { "summary": "Adjust RBT composition", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBTAdjustRequest" } } } }, "responses": { "200": { "description": "Composition updated", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBT" } } } } } }
+      "post": {
+        "summary": "Adjust RBT composition",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBTAdjustRequest" } } } },
+        "responses": { "200": { "description": "Composition updated", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/RBT" } } } } }
+      }
     },
     "/api/rbt/value": {
-      "get": { "summary": "Get aggregated RBT value", "parameters": [{ "name": "wallet_address", "in": "query", "schema": { "type": "string" } }], "responses": { "200": { "description": "Aggregated RBT value", "content": { "application/json": { "schema": { "type": "object", "properties": { "wallet_address": { "type": "string" }, "total_rbt": { "type": "number" } } } } } } } }
+      "get": {
+        "summary": "Get aggregated RBT value",
+        "parameters": [{ "name": "wallet_address", "in": "query", "schema": { "type": "string" } }],
+        "responses": { "200": { "description": "Aggregated RBT value", "content": { "application/json": { "schema": { "type": "object", "properties": { "wallet_address": { "type": "string" }, "total_rbt": { "type": "number" } } } } } } }
+      }
     },
     "/api/rbt/composition": {
-      "get": { "summary": "Get asset composition across RBT holdings", "parameters": [{ "name": "wallet_address", "in": "query", "schema": { "type": "string" } }], "responses": { "200": { "description": "Aggregated composition", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/AssetComposition" } } } } } }
+      "get": {
+        "summary": "Get asset composition across RBT holdings",
+        "parameters": [{ "name": "wallet_address", "in": "query", "schema": { "type": "string" } }],
+        "responses": { "200": { "description": "Aggregated composition", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/AssetComposition" } } } } }
+      }
     },
 
     "/api/stocks/price": { "get": { "summary": "Get stock quote from Alpaca", "parameters": [{ "name": "symbol", "in": "query", "schema": { "type": "string" }, "required": true }], "responses": { "200": { "description": "OK" } } } },

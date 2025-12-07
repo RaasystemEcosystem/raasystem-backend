@@ -1,4 +1,3 @@
-// src/server/adapters/iceAdapter.js
 const WebSocket = require('ws');
 const EventEmitter = require('events');
 
@@ -10,7 +9,7 @@ class ICEAdapter extends EventEmitter {
         this.marketData = {};
         this.socket = null;
         this.subscribedSymbols = [];
-        this.reconnectDelay = 5000; // 5 seconds
+        this.reconnectDelay = 5000;
         this.initWebSocket();
     }
 
@@ -48,7 +47,7 @@ class ICEAdapter extends EventEmitter {
     }
 
     subscribeToMarkets(symbols) {
-        this.subscribedSymbols = symbols; // save so we can resubscribe on reconnect
+        this.subscribedSymbols = symbols;
 
         if (this.socket.readyState === WebSocket.OPEN) {
             const msg = { action: 'subscribe', symbols };
@@ -57,6 +56,15 @@ class ICEAdapter extends EventEmitter {
         } else {
             console.warn('⚠️ Cannot subscribe yet: WebSocket not open, waiting...');
             this.once('open', () => this.subscribeToMarkets(symbols));
+        }
+    }
+
+    unsubscribeAll() {
+        if (this.socket.readyState === WebSocket.OPEN && this.subscribedSymbols.length > 0) {
+            const msg = { action: 'unsubscribe', symbols: this.subscribedSymbols };
+            this.socket.send(JSON.stringify(msg));
+            this.subscribedSymbols = [];
+            console.log('📡 Unsubscribed from all markets');
         }
     }
 

@@ -1,14 +1,13 @@
 const EventEmitter = require('events');
 
 class ArbitrageService extends EventEmitter {
-  constructor({ alpacaAdapter, iceAdapter = null, spreadThreshold = 0.2 }) {
+  constructor({ alpacaAdapter = null, iceAdapter = null, spreadThreshold = 0.2 }) {
     super();
     this.alpaca = alpacaAdapter;
-    this.ice = iceAdapter;  // can be null
+    this.ice = iceAdapter;
     this.spreadThreshold = spreadThreshold;
-    this.latestSignals = {}; // store latest signal per symbol
+    this.latestSignals = {};
 
-    // Only listen to ICE if adapter exists
     if (this.ice) {
       this.ice.on('marketData', (data) => this.evaluateOpportunity(data.symbol));
     } else {
@@ -17,13 +16,12 @@ class ArbitrageService extends EventEmitter {
   }
 
   evaluateOpportunity(symbol) {
-    const alpacaQuote = this.alpaca.getQuote(symbol);
-    const iceQuote = this.ice ? this.ice.getMarketData(symbol) : null;
+    const alpacaQuote = this.alpaca?.getQuote(symbol);
+    const iceQuote = this.ice?.getMarketData(symbol);
 
     if (!alpacaQuote && !iceQuote) return;
 
-    // If ICE exists, calculate spread between ICE bid and Alpaca ask
-    const opportunity = iceQuote ? iceQuote.bid - alpacaQuote.ask : 0;
+    const opportunity = iceQuote ? iceQuote.bid - alpacaQuote?.ask : 0;
 
     if (opportunity >= this.spreadThreshold) {
       const signal = {
@@ -34,11 +32,10 @@ class ArbitrageService extends EventEmitter {
         timestamp: Date.now()
       };
 
-      this.latestSignals[symbol] = signal; // cache latest signal
+      this.latestSignals[symbol] = signal;
       console.log(`🚀 Arbitrage opportunity detected for ${symbol}: $${opportunity.toFixed(2)}`);
       this.emit('signal', signal);
     } else {
-      // Remove signal if no longer profitable
       delete this.latestSignals[symbol];
     }
   }
@@ -48,10 +45,11 @@ class ArbitrageService extends EventEmitter {
   }
 
   async executeTrade(signal) {
+    if (!this.alpaca) return;
+
     try {
       const order = await this.alpaca.placeOrder(signal.symbol, 1, 'buy', 'market');
       console.log('✅ Alpaca buy executed:', order.id);
-      // Optional: add ICE/XRP/USDT execution here
     } catch (err) {
       console.error('❌ Failed to execute trade:', err.message);
     }
