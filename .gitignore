@@ -1,0 +1,5 @@
+# Ignore nested repo or deployment scripts
+backend_deploy/
+raasystem-backend/
+node_modules/
+.env
