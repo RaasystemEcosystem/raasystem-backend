@@ -1,18 +1,10 @@
+// src/routes/raas.js
 const express = require('express');
 const router = express.Router();
+const raasController = require('../controllers/raasController');
 
-// Example endpoint: Raasystem status
-router.get('/status', (req, res) => {
-  res.json({ message: "✅ Raasystem route working" });
-});
-
-// Example endpoint: System info
-router.get('/info', (req, res) => {
-  res.json({
-    system: "Raasystem Unified Backend",
-    version: "1.0.0",
-    time: new Date()
-  });
-});
+router.get('/price', raasController.price);
+router.post('/mint', raasController.mint);
+router.post('/burn', raasController.burn);
 
 module.exports = router;
