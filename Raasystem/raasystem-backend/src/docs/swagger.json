@@ -1,0 +1,107 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Raasystem Unified Backend API",
+    "version": "1.0.0",
+    "description": "Unified API powering RaasBridge, RaasPay, RBT, RaasOracle, and general Raasystem services. Integrates ICE (commodities), XRP/USDT (payments), RAAS (gold-backed crypto), RST (tokenized stocks), and RBT (RaasBridge Token)."
+  },
+  "servers": [
+    { "url": "http://localhost:3007", "description": "Local Development Server" },
+    { "url": "https://api.raasystem.io", "description": "Production Server" }
+  ],
+  "paths": {
+    "/api/raas/status": {
+      "get": {
+        "summary": "Check Raasystem Unified Backend status",
+        "responses": {
+          "200": { "description": "Raasystem status OK" }
+        }
+      }
+    },
+    "/api/rbt/status": {
+      "get": {
+        "summary": "Check RBT status",
+        "responses": {
+          "200": { "description": "RBT status OK" }
+        }
+      }
+    },
+    "/api/rbt": {
+      "get": {
+        "summary": "List all RBT holdings",
+        "parameters": [
+          { "name": "wallet_address", "in": "query", "schema": { "type": "string" }, "description": "Optional wallet address filter" }
+        ],
+        "responses": {
+          "200": { "description": "Array of RBT holdings" }
+        }
+      }
+    },
+    "/api/rbt/mint": {
+      "post": {
+        "summary": "Mint new RBT",
+        "requestBody": { "required": true },
+        "responses": { "200": { "description": "RBT minted successfully" } }
+      }
+    },
+    "/api/rbt/burn": {
+      "post": {
+        "summary": "Burn RBT",
+        "requestBody": { "required": true },
+        "responses": { "200": { "description": "RBT burned successfully" } }
+      }
+    },
+    "/api/raaspay/health": {
+      "get": {
+        "summary": "Raaspay Healthcheck",
+        "responses": { "200": { "description": "OK" } }
+      }
+    },
+    "/api/raaspay/payments": {
+      "get": {
+        "summary": "List payments",
+        "responses": { "200": { "description": "Payments retrieved" } }
+      }
+    },
+    "/api/raaspay/transfer": {
+      "post": {
+        "summary": "Create payment",
+        "requestBody": { "required": true },
+        "responses": { "201": { "description": "Payment created" } }
+      }
+    },
+    "/api/oracle/price": {
+      "get": {
+        "summary": "Get latest gold price from oracle",
+        "responses": { "200": { "description": "Price retrieved" } }
+      }
+    },
+    "/api/arbitrage/signals": {
+      "get": {
+        "summary": "Get latest arbitrage signals",
+        "responses": { "200": { "description": "Signals retrieved" } }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Payment": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "amount": { "type": "number" }
+        }
+      },
+      "RBT": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "wallet_address": { "type": "string" },
+          "amount": { "type": "number" },
+          "composition": { "type": "object" }
+        }
+      }
+    }
+  }
+}
