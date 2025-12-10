@@ -22,6 +22,7 @@ NODE_ENV=production
 JWT_SECRET=your_jwt_secret_here
 ICE_WS_URL=   # optional
 ICE_API_KEY=  # optional
+<<<<<<< HEAD
 
 API Endpoints
 
@@ -56,3 +57,5 @@ API Endpoints
 | **RBT Balance**           | `/api/rbt/balance`       | GET    | Wallet RBT balance                                          |
 | **RBT Transfer**          | `/api/rbt/transfer`      | POST   | Move RBT between wallets                                    |
 | **RBT Supply**            | `/api/rbt/supply`        | GET    | Total RBT supply                                            |
+=======
+>>>>>>> ecca5b6 (Unified Backend clean production build)

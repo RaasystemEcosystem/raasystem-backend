@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // src/routes/rbt.js
 const express = require('express');
 const router = express.Router();
@@ -13,5 +14,13 @@ router.get('/composition', rbtController.composition);
 router.post('/transfer', rbtController.transfer);
 router.get('/supply', rbtController.supply);
 router.post('/convert', rbtController.convertFromRAAS);
+=======
+const express = require('express');
+const router = express.Router();
+
+router.get('/status', (req, res) =>
+  res.json({ message: "RBT route working" })
+);
+>>>>>>> ecca5b6 (Unified Backend clean production build)
 
 module.exports = router;
